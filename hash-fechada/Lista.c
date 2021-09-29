@@ -69,11 +69,11 @@ void removeLast(List *list) {
 
 void removeMiddle(List *list, int key) {
     Node *node = list->first;
-    int exists = compareByKey(node, key);
+    int exists = compareNodeByKey(node, key);
 
     while (node != NULL && exists < 0) {
         node = node->next;
-        exists = compareByKey(node, key);
+        exists = compareNodeByKey(node, key);
     }
 
     if (exists > 0) {
@@ -110,7 +110,7 @@ int listSearch(List *list, int key) {
     int result = 1;
 
     while (node != NULL) {
-        result = compareByKey(node, key);
+        result = compareNodeByKey(node, key);
         if (result == 0 || result == -1) {
             break;
         }
@@ -123,13 +123,13 @@ void pop(List *list, int key) {
         printf(ERRO_LISTA_VAZIA);
     }
 
-    if (list->size == 1 && compareByKey(list->first, key)) {
+    if (list->size == 1 && compareNodeByKey(list->first, key)) {
         return cleanList(list);
     }
-    if (compareByKey(list->first, key) == 0) {
+    if (compareNodeByKey(list->first, key) == 0) {
         return removeFirst(list);
     }
-    if (compareByKey(list->last, key) == 0) {
+    if (compareNodeByKey(list->last, key) == 0) {
         return removeLast(list);
     }
     removeMiddle(list, key);

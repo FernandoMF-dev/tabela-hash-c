@@ -129,6 +129,30 @@ hash_fechada/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/build
 .PHONY : hash_fechada/fast
 
+Aluno.o: Aluno.c.o
+.PHONY : Aluno.o
+
+# target to build an object file
+Aluno.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Aluno.c.o
+.PHONY : Aluno.c.o
+
+Aluno.i: Aluno.c.i
+.PHONY : Aluno.i
+
+# target to preprocess a source file
+Aluno.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Aluno.c.i
+.PHONY : Aluno.c.i
+
+Aluno.s: Aluno.c.s
+.PHONY : Aluno.s
+
+# target to generate assembly for a file
+Aluno.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Aluno.c.s
+.PHONY : Aluno.c.s
+
 Lista.o: Lista.c.o
 .PHONY : Lista.o
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... hash_fechada"
+	@echo "... Aluno.o"
+	@echo "... Aluno.i"
+	@echo "... Aluno.s"
 	@echo "... Lista.o"
 	@echo "... Lista.i"
 	@echo "... Lista.s"

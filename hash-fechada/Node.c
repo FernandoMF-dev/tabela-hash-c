@@ -12,7 +12,7 @@ void printNode(Node *node) {
     printf("%d", node->elemen);
 }
 
-int compareByKey(Node *node, int key) {
+int compareNodeByKey(Node *node, int key) {
     if (node == NULL) {
         return 2;
     }

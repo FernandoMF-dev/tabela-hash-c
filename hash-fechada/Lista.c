@@ -106,16 +106,25 @@ void push(List *list, int value) {
 }
 
 int listSearch(List *list, int key) {
-    Node *node = list->first;
-    int result = 1;
-
-    while (node != NULL) {
-        result = compareNodeByKey(node, key);
-        if (result == 0 || result == -1) {
-            break;
-        }
+    if (list->size == 0) {
+        printf(ERRO_LISTA_VAZIA);
+        return NULL;
     }
-    return !result;
+
+    Node *node = list->first;
+    int compare = compareNodeByKey(node, key);
+
+    while (node != NULL && compare < 0) {
+        node = node->next;
+        compare = compareNodeByKey(node, key);
+    }
+
+    if (compare == 0) {
+        return node->elemen;
+    }
+
+    printf(ERRO_REGISTRO_NAO_ENCONTRADO);
+    return NULL;
 }
 
 void pop(List *list, int key) {

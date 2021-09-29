@@ -12,5 +12,6 @@ CMakeFiles/hash_fechada.dir/Node.c.o: \
  ../Node.c \
  ../headers/Node.h
 CMakeFiles/hash_fechada.dir/main.c.o: \
- ../headers/Aluno.h \
+ ../headers/Lista.h \
+ ../headers/Node.h \
  ../main.c

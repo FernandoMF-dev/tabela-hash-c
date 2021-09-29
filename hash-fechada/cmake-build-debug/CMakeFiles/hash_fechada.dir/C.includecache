@@ -6,7 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/basis/Documentos/Tabela Hash/hash-fechada/main.c
+/home/basis/Documentos/Tabela Hash/hash-fechada/Lista.c
+Lista.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/Lista.h
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/Lista.h
 stdio.h
+-
+stdlib.h
+-
+string.h
+-
+Node.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/Node.h
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/Node.h
+stdio.h
+-
+stdlib.h
+-
+string.h
 -
 

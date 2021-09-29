@@ -129,6 +129,54 @@ hash_fechada/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/build
 .PHONY : hash_fechada/fast
 
+Lista.o: Lista.c.o
+.PHONY : Lista.o
+
+# target to build an object file
+Lista.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Lista.c.o
+.PHONY : Lista.c.o
+
+Lista.i: Lista.c.i
+.PHONY : Lista.i
+
+# target to preprocess a source file
+Lista.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Lista.c.i
+.PHONY : Lista.c.i
+
+Lista.s: Lista.c.s
+.PHONY : Lista.s
+
+# target to generate assembly for a file
+Lista.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Lista.c.s
+.PHONY : Lista.c.s
+
+Node.o: Node.c.o
+.PHONY : Node.o
+
+# target to build an object file
+Node.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Node.c.o
+.PHONY : Node.c.o
+
+Node.i: Node.c.i
+.PHONY : Node.i
+
+# target to preprocess a source file
+Node.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Node.c.i
+.PHONY : Node.c.i
+
+Node.s: Node.c.s
+.PHONY : Node.s
+
+# target to generate assembly for a file
+Node.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Node.c.s
+.PHONY : Node.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -162,6 +210,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... hash_fechada"
+	@echo "... Lista.o"
+	@echo "... Lista.i"
+	@echo "... Lista.s"
+	@echo "... Node.o"
+	@echo "... Node.i"
+	@echo "... Node.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

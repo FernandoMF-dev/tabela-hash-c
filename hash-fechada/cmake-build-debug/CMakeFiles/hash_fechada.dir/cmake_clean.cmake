@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hash_fechada.dir/Lista.c.o"
+  "CMakeFiles/hash_fechada.dir/Node.c.o"
   "CMakeFiles/hash_fechada.dir/main.c.o"
   "hash_fechada"
   "hash_fechada.pdb"

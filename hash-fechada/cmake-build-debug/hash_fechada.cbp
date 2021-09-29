@@ -76,6 +76,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/Lista.c">
+			<Option target="hash_fechada"/>
+		</Unit>
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/Lista.h">
+			<Option target="hash_fechada"/>
+		</Unit>
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/Node.c">
+			<Option target="hash_fechada"/>
+		</Unit>
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/Node.h">
+			<Option target="hash_fechada"/>
+		</Unit>
 		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/main.c">
 			<Option target="hash_fechada"/>
 		</Unit>

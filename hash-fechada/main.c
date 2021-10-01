@@ -15,6 +15,7 @@ int menu() {
     printf("\n4- Remover");
     printf("\n5- Limpar");
     printf("\n6- Clonar");
+    printf("\n7- Estatística");
     printf("\n0- Sair");
     printf("\nESCOLHA: ");
     scanf("%d", &choice);
@@ -23,6 +24,7 @@ int menu() {
 }
 
 int main() {
+    // TODO: Conscerta o bug na busca do menor e maior índice
     HashFechada *hash = newHashFechada("Hash", LINHAS_MATRIZ);
     HashFechada *clone = newHashFechada("Clone", LINHAS_MATRIZ);
     Aluno value;
@@ -57,6 +59,9 @@ int main() {
                 break;
             case 6:
                 cloneHash(clone, hash);
+                break;
+            case 7:
+                printStatisticHash(hash);
                 break;
             case 0:
                 codition = 0;

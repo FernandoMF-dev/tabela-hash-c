@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/basis/Documentos/Tabela Hash/hash-fechada/Aluno.c
-headers/Aluno.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
-
 /home/basis/Documentos/Tabela Hash/hash-fechada/HashFechada.c
 headers/HashFechada.h
 /home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
@@ -28,6 +24,8 @@ stdio.h
 stdlib.h
 -
 string.h
+-
+math.h
 -
 Lista.h
 /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
@@ -50,13 +48,5 @@ stdio.h
 stdlib.h
 -
 Aluno.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
-
-/home/basis/Documentos/Tabela Hash/hash-fechada/main.c
-stdio.h
--
-headers/HashFechada.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
-headers/Aluno.h
 /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
 

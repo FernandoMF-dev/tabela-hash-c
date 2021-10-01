@@ -15,13 +15,13 @@ typedef struct List {
 
 List *newList(char *label);
 
-void push(List *list, int value);
+void insertList(List *list, int value);
 
-int listSearch(List *list, int key);
+int searchList(List *list, int key);
 
-void pop(List *list, int key);
+void removeList(List *list, int key);
 
-void cleanList(List *list);
+void clearList(List *list);
 
 void cloneList(List *target, List *source);
 

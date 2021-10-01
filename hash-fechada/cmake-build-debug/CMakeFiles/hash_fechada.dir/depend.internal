@@ -4,6 +4,11 @@
 CMakeFiles/hash_fechada.dir/Aluno.c.o
  /home/basis/Documentos/Tabela Hash/hash-fechada/Aluno.c
  /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
+CMakeFiles/hash_fechada.dir/HashFechada.c.o
+ /home/basis/Documentos/Tabela Hash/hash-fechada/HashFechada.c
+ /home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
+ /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
+ /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Node.h
 CMakeFiles/hash_fechada.dir/Lista.c.o
  /home/basis/Documentos/Tabela Hash/hash-fechada/Lista.c
  /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
@@ -12,6 +17,7 @@ CMakeFiles/hash_fechada.dir/Node.c.o
  /home/basis/Documentos/Tabela Hash/hash-fechada/Node.c
  /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Node.h
 CMakeFiles/hash_fechada.dir/main.c.o
+ /home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
  /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
  /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Node.h
  /home/basis/Documentos/Tabela Hash/hash-fechada/main.c

@@ -153,6 +153,30 @@ Aluno.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Aluno.c.s
 .PHONY : Aluno.c.s
 
+HashFechada.o: HashFechada.c.o
+.PHONY : HashFechada.o
+
+# target to build an object file
+HashFechada.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/HashFechada.c.o
+.PHONY : HashFechada.c.o
+
+HashFechada.i: HashFechada.c.i
+.PHONY : HashFechada.i
+
+# target to preprocess a source file
+HashFechada.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/HashFechada.c.i
+.PHONY : HashFechada.c.i
+
+HashFechada.s: HashFechada.c.s
+.PHONY : HashFechada.s
+
+# target to generate assembly for a file
+HashFechada.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/HashFechada.c.s
+.PHONY : HashFechada.c.s
+
 Lista.o: Lista.c.o
 .PHONY : Lista.o
 
@@ -237,6 +261,9 @@ help:
 	@echo "... Aluno.o"
 	@echo "... Aluno.i"
 	@echo "... Aluno.s"
+	@echo "... HashFechada.o"
+	@echo "... HashFechada.i"
+	@echo "... HashFechada.s"
 	@echo "... Lista.o"
 	@echo "... Lista.i"
 	@echo "... Lista.s"

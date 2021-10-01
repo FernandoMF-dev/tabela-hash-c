@@ -79,6 +79,9 @@
 		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/Aluno.c">
 			<Option target="hash_fechada"/>
 		</Unit>
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/HashFechada.c">
+			<Option target="hash_fechada"/>
+		</Unit>
 		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/Lista.c">
 			<Option target="hash_fechada"/>
 		</Unit>
@@ -86,6 +89,9 @@
 			<Option target="hash_fechada"/>
 		</Unit>
 		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h">
+			<Option target="hash_fechada"/>
+		</Unit>
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h">
 			<Option target="hash_fechada"/>
 		</Unit>
 		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h">

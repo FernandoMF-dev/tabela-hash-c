@@ -6,8 +6,18 @@
 
 #IncludeRegexTransform: 
 
-/home/basis/Documentos/Tabela Hash/hash-fechada/Lista.c
-headers/Lista.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/HashFechada.c
+headers/HashFechada.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+Lista.h
 /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
 
 /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h

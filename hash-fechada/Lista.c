@@ -1,16 +1,11 @@
 #include "headers/Lista.h"
 
+// =-=-=-=-= CONSTANTES =-=-=-=-=
+
 #define ERRO_LISTA_VAZIA "\n\tERRO: A lista está vazia!\n"
 #define ERRO_REGISTRO_NAO_ENCONTRADO "\n\tERRO: Registro não encontrado\n"
 
-List *newList(char *label) {
-    List *list = (List *) malloc(sizeof(List));
-    list->first = NULL;
-    list->last = NULL;
-    list->size = 0;
-    list->label = label;
-    return list;
-}
+// =-=-=-=-= METODOS PRIVADOS =-=-=-=-=
 
 void insertEmpty(List *list, int value) {
     Node *node = newNode(value);
@@ -92,7 +87,18 @@ void removeMiddle(List *list, int key) {
     list->size--;
 }
 
-void push(List *list, int value) {
+// =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
+
+List *newList(char *label) {
+    List *list = (List *) malloc(sizeof(List));
+    list->first = NULL;
+    list->last = NULL;
+    list->size = 0;
+    list->label = label;
+    return list;
+}
+
+void insertList(List *list, int value) {
     if (list->size == 0) {
         insertEmpty(list, value);
     } else if (list->first->elemen > value) {
@@ -105,7 +111,7 @@ void push(List *list, int value) {
     list->size++;
 }
 
-int listSearch(List *list, int key) {
+int searchList(List *list, int key) {
     if (list->size == 0) {
         printf(ERRO_LISTA_VAZIA);
         return NULL;
@@ -127,13 +133,13 @@ int listSearch(List *list, int key) {
     return NULL;
 }
 
-void pop(List *list, int key) {
+void removeList(List *list, int key) {
     if (list->size == 0) {
         printf(ERRO_LISTA_VAZIA);
     }
 
     if (list->size == 1 && compareNodeByKey(list->first, key)) {
-        return cleanList(list);
+        return clearList(list);
     }
     if (compareNodeByKey(list->first, key) == 0) {
         return removeFirst(list);
@@ -144,9 +150,13 @@ void pop(List *list, int key) {
     removeMiddle(list, key);
 }
 
-void cleanList(List *list) {
-    free(list->first);
-    free(list->last);
+void clearList(List *list) {
+    if (list->size > 1) {
+        free(list->first);
+        free(list->last);
+    } else {
+        free(list->first);
+    }
 
     list->size = 0;
     list->first = NULL;
@@ -155,10 +165,10 @@ void cleanList(List *list) {
 
 void cloneList(List *target, List *source) {
     Node *node = source->first;
-    cleanList(target);
+    clearList(target);
 
     while (node != NULL) {
-        push(target, node->elemen);
+        insertList(target, node->elemen);
         node = node->next;
     }
 }

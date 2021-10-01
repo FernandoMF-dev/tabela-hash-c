@@ -6,8 +6,9 @@
 
 // =-=-=-=-= METODOS PRIVADOS =-=-=-=-=
 
-int hashFunction(HashFechada *hash, int key) {
-    return key % hash->length;
+int hashFunction(HashFechada *hash, char *key) {
+    int keyIntValue = (int) strtol(key, (char **) NULL, 10);
+    return keyIntValue % hash->length;
 }
 
 List *initializeElementList(int i) {
@@ -39,17 +40,17 @@ HashFechada *newHashFechada(char *label, int length) {
     return hash;
 }
 
-void insertHash(HashFechada *hash, int value) {
-    int index = hashFunction(hash, value);
+void insertHash(HashFechada *hash, Aluno value) {
+    int index = hashFunction(hash, value.matricula);
     insertList(hash->elements[index], value);
 }
 
-int searchHash(HashFechada *hash, int key) {
+Aluno searchHash(HashFechada *hash, char *key) {
     int index = hashFunction(hash, key);
     return searchList(hash->elements[index], key);
 }
 
-void removeHash(HashFechada *hash, int key) {
+void removeHash(HashFechada *hash, char *key) {
     int index = hashFunction(hash, key);
     removeList(hash->elements[index], key);
 }

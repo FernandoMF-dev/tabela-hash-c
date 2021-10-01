@@ -7,31 +7,31 @@
 
 // =-=-=-=-= METODOS PRIVADOS =-=-=-=-=
 
-void insertEmpty(List *list, int value) {
+void insertEmpty(List *list, Aluno value) {
     Node *node = newNode(value);
     list->first = node;
     list->last = node;
 }
 
-void insertFirst(List *list, int value) {
+void insertFirst(List *list, Aluno value) {
     Node *node = newNode(value);
     node->next = list->first;
     list->first->prev = node;
     list->first = node;
 }
 
-void insertLast(List *list, int value) {
+void insertLast(List *list, Aluno value) {
     Node *node = newNode(value);
     node->prev = list->last;
     list->last->next = node;
     list->last = node;
 }
 
-void insertMiddle(List *list, int value) {
+void insertMiddle(List *list, Aluno value) {
     Node *node = newNode(value);
     Node *aux = list->first;
 
-    while (aux->elemen < node->elemen) {
+    while (compareAluno(aux->value, node->value) < 0) {
         aux = aux->next;
     }
 
@@ -62,7 +62,7 @@ void removeLast(List *list) {
     list->size--;
 }
 
-void removeMiddle(List *list, int key) {
+void removeMiddle(List *list, char *key) {
     Node *node = list->first;
     int exists = compareNodeByKey(node, key);
 
@@ -98,12 +98,12 @@ List *newList(char *label) {
     return list;
 }
 
-void insertList(List *list, int value) {
+void insertList(List *list, Aluno value) {
     if (list->size == 0) {
         insertEmpty(list, value);
-    } else if (list->first->elemen > value) {
+    } else if (compareAluno(list->first->value, value) > 0) {
         insertFirst(list, value);
-    } else if (list->last->elemen < value) {
+    } else if (compareAluno(list->first->value, value) < 0) {
         insertLast(list, value);
     } else {
         insertMiddle(list, value);
@@ -111,10 +111,10 @@ void insertList(List *list, int value) {
     list->size++;
 }
 
-int searchList(List *list, int key) {
+Aluno searchList(List *list, char *key) {
     if (list->size == 0) {
         printf(ERRO_LISTA_VAZIA);
-        return NULL;
+        return newAluno();
     }
 
     Node *node = list->first;
@@ -126,14 +126,14 @@ int searchList(List *list, int key) {
     }
 
     if (compare == 0) {
-        return node->elemen;
+        return node->value;
     }
 
     printf(ERRO_REGISTRO_NAO_ENCONTRADO);
-    return NULL;
+    return newAluno();
 }
 
-void removeList(List *list, int key) {
+void removeList(List *list, char *key) {
     if (list->size == 0) {
         printf(ERRO_LISTA_VAZIA);
     }
@@ -168,7 +168,7 @@ void cloneList(List *target, List *source) {
     clearList(target);
 
     while (node != NULL) {
-        insertList(target, node->elemen);
+        insertList(target, node->value);
         node = node->next;
     }
 }

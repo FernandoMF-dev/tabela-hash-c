@@ -1,6 +1,6 @@
 #include "headers/Aluno.h"
 
-#define MATRICULA_MAX_LENGTH 16
+#define MATRICULA_MAX_LENGTH 15
 #define NOME_MAX_LENGTH 255
 
 Aluno newAluno() {
@@ -20,11 +20,11 @@ Aluno readAluno() {
     scanf(" %s", aluno.matricula);
     getchar();
 
-    printf("\nNome(%d): ", NOME_MAX_LENGTH);
+    printf("Nome(%d): ", NOME_MAX_LENGTH);
     scanf(" %s", aluno.nome);
     getchar();
 
-    printf("\nNota: ");
+    printf("Nota: ");
     scanf(" %f", &aluno.nota);
 
     return aluno;
@@ -32,6 +32,19 @@ Aluno readAluno() {
 
 int compareAlunoByKey(Aluno aluno, char *key) {
     return strcmp(aluno.matricula, key);
+}
+
+int compareAluno(Aluno aluno1, Aluno aluno2) {
+    int result = strcmp(aluno1.matricula, aluno2.matricula);
+
+    if (result == 0) {
+        result = strcmp(aluno1.nome, aluno2.nome);
+        if (result == 0) {
+            result = (int) (aluno1.nota - aluno2.nota);
+        }
+    }
+
+    return result;
 }
 
 void printAluno(Aluno aluno) {

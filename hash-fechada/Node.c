@@ -1,32 +1,29 @@
 #include "headers/Node.h"
 
-Node *newNode(int value) {
+Node *newNode(Aluno value) {
     Node *node = (Node *) malloc(sizeof(Node));
-    node->elemen = value;
+    node->value = value;
     node->prev = NULL;
     node->next = NULL;
     return node;
 }
 
 void printNode(Node *node) {
-    printf("%d", node->elemen);
+    printAluno(node->value);
 }
 
-int compareNodeByKey(Node *node, int key) {
+int compareNodeByKey(Node *node, char *key) {
     if (node == NULL) {
         return 2;
     }
 
-    int element = node->elemen;
+    Aluno element = node->value;
 
-    if (element < key) {
+    if (compareAlunoByKey(element, key) < 0) {
         return -1;
     }
-    if (element > key) {
+    if (compareAlunoByKey(element, key) > 0) {
         return 1;
     }
-    if (element == key) {
-        return 0;
-    }
-
+    return 0;
 }

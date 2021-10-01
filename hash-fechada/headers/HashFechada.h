@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "Lista.h"
+#include "Aluno.h"
 
 #ifndef HASH_FECHADA_HASHFECHADA_H
 #define HASH_FECHADA_HASHFECHADA_H
@@ -15,11 +16,11 @@ typedef struct HashFechada {
 
 HashFechada *newHashFechada(char *label, int length);
 
-void insertHash(HashFechada *hash, int value);
+void insertHash(HashFechada *hash, Aluno value);
 
-int searchHash(HashFechada *hash, int key);
+Aluno searchHash(HashFechada *hash, char *key);
 
-void removeHash(HashFechada *hash, int key);
+void removeHash(HashFechada *hash, char *key);
 
 void clearHash(HashFechada *hash);
 

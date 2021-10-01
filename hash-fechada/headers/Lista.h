@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "Node.h"
+#include "Aluno.h"
 
 #ifndef HASH_FECHADA_LISTA_H
 #define HASH_FECHADA_LISTA_H
@@ -15,11 +16,11 @@ typedef struct List {
 
 List *newList(char *label);
 
-void insertList(List *list, int value);
+void insertList(List *list, Aluno value);
 
-int searchList(List *list, int key);
+Aluno searchList(List *list, char *key);
 
-void removeList(List *list, int key);
+void removeList(List *list, char *key);
 
 void clearList(List *list);
 

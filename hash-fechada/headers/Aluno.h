@@ -17,6 +17,8 @@ Aluno readAluno();
 
 int compareAlunoByKey(Aluno aluno, char *key);
 
+int compareAluno(Aluno aluno1, Aluno aluno2);
+
 void printAluno(Aluno aluno);
 
 #endif //HASH_FECHADA_ALUNO_H

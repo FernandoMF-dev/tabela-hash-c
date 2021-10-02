@@ -2,6 +2,9 @@
 
 // =-=-=-=-= CONSTANTES =-=-=-=-=
 
+#define ERROR_FALHA_ALOCACAO "\n\tERRO: Erro durante alocação de memória!\n"
+#define ERROR_INVALID_LENGTH "\n\tERRO: Não e possível criar uma HASH com menos de 1 índice!\n"
+
 #define MAX_LIST_LABEL_LENGTH 7
 
 // =-=-=-=-= METODOS PRIVADOS | DECLARAÇÃO =-=-=-=-=
@@ -21,6 +24,10 @@ int hashFunction(HashFechada *hash, char *key) {
 
 List *initializeElementList(int i) {
     List *list = newList("");
+    if (list == NULL) {
+        return NULL;
+    }
+
     list->label = (char *) malloc((MAX_LIST_LABEL_LENGTH + 1) * sizeof(char));
     sprintf(list->label, "%d", i);
 
@@ -32,6 +39,9 @@ List **initializeElements(int length) {
 
     for (int i = 0; i < length; i++) {
         elements[i] = initializeElementList(i);
+        if (elements[i] == NULL) {
+            return NULL;
+        }
     }
 
     return elements;
@@ -40,11 +50,25 @@ List **initializeElements(int length) {
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
 
 HashFechada *newHashFechada(char *label, int length) {
+    if (length < 1) {
+        printf(ERROR_INVALID_LENGTH);
+        return NULL;
+    }
+
     HashFechada *hash = (HashFechada *) malloc(sizeof(HashFechada));
+
+    if (hash == NULL) {
+        printf(ERROR_FALHA_ALOCACAO);
+        return NULL;
+    }
 
     hash->label = label;
     hash->length = length;
     hash->elements = initializeElements(length);
+
+    if (hash->elements == NULL) {
+        return NULL;
+    }
 
     return hash;
 }

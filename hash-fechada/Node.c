@@ -1,10 +1,23 @@
 #include "headers/Node.h"
 
+// =-=-=-=-= CONSTANTES =-=-=-=-=
+
+#define ERROR_FALHA_ALOCACAO "\n\tERRO: Erro durante alocação de memória!\n"
+
+// =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
+
 Node *newNode(Aluno value) {
     Node *node = (Node *) malloc(sizeof(Node));
+
+    if (node == NULL) {
+        printf(ERROR_FALHA_ALOCACAO);
+        return NULL;
+    }
+
     node->value = value;
     node->prev = NULL;
     node->next = NULL;
+
     return node;
 }
 

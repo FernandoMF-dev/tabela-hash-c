@@ -4,50 +4,74 @@
 
 #define ERRO_LISTA_VAZIA "\n\tERRO: A lista está vazia!\n"
 #define ERRO_REGISTRO_NAO_ENCONTRADO "\n\tERRO: Registro não encontrado\n"
+#define ERROR_FALHA_ALOCACAO "\n\tERRO: Erro durante alocação de memória!\n"
+
+#define TRUE 1
+#define FALSE 0
 
 // =-=-=-=-= METODOS PRIVADOS | DECLARAÇÃO =-=-=-=-=
 
-void removeMiddle(List *list, char *key);
+int insertEmpty(List *list, Aluno value);
 
-void insertEmpty(List *list, Aluno value);
+int insertFirst(List *list, Aluno value);
 
-void insertFirst(List *list, Aluno value);
+int insertLast(List *list, Aluno value);
 
-void insertLast(List *list, Aluno value);
-
-void insertMiddle(List *list, Aluno value);
+int insertMiddle(List *list, Aluno value);
 
 void removeFirst(List *list);
 
 void removeLast(List *list);
 
+void removeMiddle(List *list, char *key);
 
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
-void insertEmpty(List *list, Aluno value) {
+int insertEmpty(List *list, Aluno value) {
     Node *node = newNode(value);
+    if (node == NULL) {
+        return FALSE;
+    }
+
     list->first = node;
     list->last = node;
+
+    return TRUE;
 }
 
-void insertFirst(List *list, Aluno value) {
+int insertFirst(List *list, Aluno value) {
     Node *node = newNode(value);
+    if (node == NULL) {
+        return FALSE;
+    }
+
     node->next = list->first;
     list->first->prev = node;
     list->first = node;
+
+    return TRUE;
 }
 
-void insertLast(List *list, Aluno value) {
+int insertLast(List *list, Aluno value) {
     Node *node = newNode(value);
+    if (node == NULL) {
+        return FALSE;
+    }
+
     node->prev = list->last;
     list->last->next = node;
     list->last = node;
+
+    return TRUE;
 }
 
-void insertMiddle(List *list, Aluno value) {
+int insertMiddle(List *list, Aluno value) {
     Node *node = newNode(value);
-    Node *aux = list->first;
+    if (node == NULL) {
+        return FALSE;
+    }
 
+    Node *aux = list->first;
     while (compareAluno(aux->value, node->value) < 0) {
         aux = aux->next;
     }
@@ -56,6 +80,8 @@ void insertMiddle(List *list, Aluno value) {
     node->prev = aux->prev;
     aux->prev->next = node;
     aux->prev = node;
+
+    return TRUE;
 }
 
 void removeFirst(List *list) {
@@ -108,24 +134,36 @@ void removeMiddle(List *list, char *key) {
 
 List *newList(char *label) {
     List *list = (List *) malloc(sizeof(List));
+
+    if (list == NULL) {
+        printf(ERROR_FALHA_ALOCACAO);
+        return NULL;
+    }
+
     list->first = NULL;
     list->last = NULL;
     list->size = 0;
     list->label = label;
+
     return list;
 }
 
 void insertList(List *list, Aluno value) {
+    int success;
+
     if (list->size == 0) {
-        insertEmpty(list, value);
+        success = insertEmpty(list, value);
     } else if (compareAluno(list->first->value, value) > 0) {
-        insertFirst(list, value);
+        success = insertFirst(list, value);
     } else if (compareAluno(list->first->value, value) < 0) {
-        insertLast(list, value);
+        success = insertLast(list, value);
     } else {
-        insertMiddle(list, value);
+        success = insertMiddle(list, value);
     }
-    list->size++;
+
+    if (success) {
+        list->size++;
+    }
 }
 
 Aluno searchList(List *list, char *key) {
@@ -155,7 +193,7 @@ void removeList(List *list, char *key) {
         printf(ERRO_LISTA_VAZIA);
     }
 
-    if (list->size == 1 && compareNodeByKey(list->first, key)) {
+    if (list->size == 1 && compareNodeByKey(list->first, key) == 0) {
         return clearList(list);
     }
     if (compareNodeByKey(list->first, key) == 0) {

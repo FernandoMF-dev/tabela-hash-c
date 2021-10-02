@@ -3,6 +3,8 @@
 #include "headers/HashFechada.h"
 #include "headers/Aluno.h"
 
+#define ERROR_FALHA_ALOCACAO "\n\tERRO: Erro durante alocação de memória!\n"
+
 #define LINHAS_MATRIZ 5
 
 int menu() {
@@ -29,6 +31,13 @@ int main() {
     Aluno value;
     char key[16];
     int codition = 1;
+
+    if(hash == NULL || clone == NULL) {
+        printf(ERROR_FALHA_ALOCACAO);
+        free(hash);
+        free(clone);
+        return 0;
+    }
 
     while (codition) {
         switch (menu()) {

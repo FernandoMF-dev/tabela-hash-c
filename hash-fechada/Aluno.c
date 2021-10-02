@@ -21,7 +21,7 @@ Aluno readAluno() {
     getchar();
 
     printf("Nome(%d): ", NOME_MAX_LENGTH);
-    scanf(" %s", aluno.nome);
+    scanf(" %[^\n]s", aluno.nome);
     getchar();
 
     printf("Nota: ");

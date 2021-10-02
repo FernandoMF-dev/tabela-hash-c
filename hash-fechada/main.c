@@ -24,7 +24,6 @@ int menu() {
 }
 
 int main() {
-    // TODO: Conscerta o bug na busca do menor e maior índice
     HashFechada *hash = newHashFechada("Hash", LINHAS_MATRIZ);
     HashFechada *clone = newHashFechada("Clone", LINHAS_MATRIZ);
     Aluno value;

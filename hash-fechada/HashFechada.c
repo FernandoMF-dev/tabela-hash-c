@@ -4,7 +4,15 @@
 
 #define MAX_LIST_LABEL_LENGTH 7
 
-// =-=-=-=-= METODOS PRIVADOS =-=-=-=-=
+// =-=-=-=-= METODOS PRIVADOS | DECLARAÇÃO =-=-=-=-=
+
+int hashFunction(HashFechada *hash, char *key);
+
+List *initializeElementList(int i);
+
+List **initializeElements(int length);
+
+// =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
 int hashFunction(HashFechada *hash, char *key) {
     int keyIntValue = (int) strtol(key, (char **) NULL, 10);
@@ -159,8 +167,8 @@ void printStatisticHash(HashFechada *hash) {
     }
     printf("\nQuantidade total de elementos: %d", sizeHash(hash));
     printf("\nMédia de elementos por índice: %.2lf", averageNodesPerListHash(hash));
-    printf("\nÍndice com o maior número de elementos(%d): %d", hash->elements[longestIndex]->size, longestIndex);
-    printf("\nÍndice com o menor número de elementos(%d): %d", hash->elements[shortestIndex]->size, shortestIndex);
+    printf("\nÍndice mais longo: %d (%d elemento(s))", longestIndex, hash->elements[longestIndex]->size);
+    printf("\nÍndice mais curto: %d (%d elemento(s))", shortestIndex, hash->elements[shortestIndex]->size);
     printf("\nDesvio padrão da quantidade de elementos pelos índices: %.2lf", standardDeviationHash(hash));
     printf("\nQuantidade dentro do intervalo da média +/- o desvio padrão: %d", countListsNormalDistribution(hash));
 }

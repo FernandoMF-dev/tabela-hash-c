@@ -5,7 +5,24 @@
 #define ERRO_LISTA_VAZIA "\n\tERRO: A lista está vazia!\n"
 #define ERRO_REGISTRO_NAO_ENCONTRADO "\n\tERRO: Registro não encontrado\n"
 
-// =-=-=-=-= METODOS PRIVADOS =-=-=-=-=
+// =-=-=-=-= METODOS PRIVADOS | DECLARAÇÃO =-=-=-=-=
+
+void removeMiddle(List *list, char *key);
+
+void insertEmpty(List *list, Aluno value);
+
+void insertFirst(List *list, Aluno value);
+
+void insertLast(List *list, Aluno value);
+
+void insertMiddle(List *list, Aluno value);
+
+void removeFirst(List *list);
+
+void removeLast(List *list);
+
+
+// =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
 void insertEmpty(List *list, Aluno value) {
     Node *node = newNode(value);

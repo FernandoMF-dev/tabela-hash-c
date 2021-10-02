@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/basis/Documentos/Tabela Hash/hash-fechada/HashFechada.c
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/HashFechada.c
 headers/HashFechada.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/HashFechada.h
 
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
 stdio.h
 -
 stdlib.h
@@ -18,7 +18,7 @@ stdlib.h
 string.h
 -
 
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/HashFechada.h
 stdio.h
 -
 stdlib.h
@@ -28,25 +28,33 @@ string.h
 math.h
 -
 Lista.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Lista.h
 Aluno.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
 
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Lista.h
 stdio.h
 -
 stdlib.h
 -
 Node.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Node.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Node.h
 Aluno.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
 
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Node.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Node.h
 stdio.h
 -
 stdlib.h
 -
 Aluno.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
+
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/main.c
+stdio.h
+-
+headers/HashFechada.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/HashFechada.h
+headers/Aluno.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
 

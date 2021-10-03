@@ -4,6 +4,13 @@
 CMakeFiles/hash_fechada.dir/Aluno.c.o: \
  ../Aluno.c \
  ../headers/Aluno.h
+CMakeFiles/hash_fechada.dir/ControleArquivoAluno.c.o: \
+ ../ControleArquivoAluno.c \
+ ../headers/Aluno.h \
+ ../headers/ControleArquivoAluno.h \
+ ../headers/HashFechada.h \
+ ../headers/Lista.h \
+ ../headers/Node.h
 CMakeFiles/hash_fechada.dir/HashFechada.c.o: \
  ../HashFechada.c \
  ../headers/Aluno.h \
@@ -21,6 +28,7 @@ CMakeFiles/hash_fechada.dir/Node.c.o: \
  ../headers/Node.h
 CMakeFiles/hash_fechada.dir/main.c.o: \
  ../headers/Aluno.h \
+ ../headers/ControleArquivoAluno.h \
  ../headers/HashFechada.h \
  ../headers/Lista.h \
  ../headers/Node.h \

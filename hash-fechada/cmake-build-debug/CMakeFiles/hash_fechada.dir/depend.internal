@@ -4,6 +4,13 @@
 CMakeFiles/hash_fechada.dir/Aluno.c.o
  /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/Aluno.c
  /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
+CMakeFiles/hash_fechada.dir/ControleArquivoAluno.c.o
+ /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/ControleArquivoAluno.c
+ /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
+ /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/ControleArquivoAluno.h
+ /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/HashFechada.h
+ /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Lista.h
+ /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Node.h
 CMakeFiles/hash_fechada.dir/HashFechada.c.o
  /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/HashFechada.c
  /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
@@ -21,6 +28,7 @@ CMakeFiles/hash_fechada.dir/Node.c.o
  /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Node.h
 CMakeFiles/hash_fechada.dir/main.c.o
  /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
+ /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/ControleArquivoAluno.h
  /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/HashFechada.h
  /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Lista.h
  /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Node.h

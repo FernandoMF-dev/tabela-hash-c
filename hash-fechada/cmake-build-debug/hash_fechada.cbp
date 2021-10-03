@@ -79,6 +79,9 @@
 		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/Aluno.c">
 			<Option target="hash_fechada"/>
 		</Unit>
+		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/ControleArquivoAluno.c">
+			<Option target="hash_fechada"/>
+		</Unit>
 		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/HashFechada.c">
 			<Option target="hash_fechada"/>
 		</Unit>
@@ -89,6 +92,9 @@
 			<Option target="hash_fechada"/>
 		</Unit>
 		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h">
+			<Option target="hash_fechada"/>
+		</Unit>
+		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/ControleArquivoAluno.h">
 			<Option target="hash_fechada"/>
 		</Unit>
 		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/HashFechada.h">

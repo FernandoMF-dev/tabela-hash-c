@@ -153,6 +153,30 @@ Aluno.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/Aluno.c.s
 .PHONY : Aluno.c.s
 
+ControleArquivoAluno.o: ControleArquivoAluno.c.o
+.PHONY : ControleArquivoAluno.o
+
+# target to build an object file
+ControleArquivoAluno.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/ControleArquivoAluno.c.o
+.PHONY : ControleArquivoAluno.c.o
+
+ControleArquivoAluno.i: ControleArquivoAluno.c.i
+.PHONY : ControleArquivoAluno.i
+
+# target to preprocess a source file
+ControleArquivoAluno.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/ControleArquivoAluno.c.i
+.PHONY : ControleArquivoAluno.c.i
+
+ControleArquivoAluno.s: ControleArquivoAluno.c.s
+.PHONY : ControleArquivoAluno.s
+
+# target to generate assembly for a file
+ControleArquivoAluno.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_fechada.dir/build.make CMakeFiles/hash_fechada.dir/ControleArquivoAluno.c.s
+.PHONY : ControleArquivoAluno.c.s
+
 HashFechada.o: HashFechada.c.o
 .PHONY : HashFechada.o
 
@@ -261,6 +285,9 @@ help:
 	@echo "... Aluno.o"
 	@echo "... Aluno.i"
 	@echo "... Aluno.s"
+	@echo "... ControleArquivoAluno.o"
+	@echo "... ControleArquivoAluno.i"
+	@echo "... ControleArquivoAluno.s"
 	@echo "... HashFechada.o"
 	@echo "... HashFechada.i"
 	@echo "... HashFechada.s"

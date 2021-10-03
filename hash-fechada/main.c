@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 #include "headers/HashFechada.h"
-#include "headers/Aluno.h"
+#include "headers/ControleArquivoAluno.h"
 
 #define ERROR_FALHA_ALOCACAO "\n\tERRO: Erro durante alocação de memória!\n"
 
-#define LINHAS_MATRIZ 5
+#define LINHAS_MATRIZ_A 997
+#define LINHAS_MATRIZ_B 1000
 
 int menu() {
     int choice = 0;
@@ -16,8 +17,7 @@ int menu() {
     printf("\n3- Buscar");
     printf("\n4- Remover");
     printf("\n5- Limpar");
-    printf("\n6- Clonar");
-    printf("\n7- Estatística");
+    printf("\n6- Estatística");
     printf("\n0- Sair");
     printf("\nESCOLHA: ");
     scanf("%d", &choice);
@@ -26,50 +26,53 @@ int menu() {
 }
 
 int main() {
-    HashFechada *hash = newHashFechada("Hash", LINHAS_MATRIZ);
-    HashFechada *clone = newHashFechada("Clone", LINHAS_MATRIZ);
+    HashFechada *hashA = newHashFechada("Hash997", LINHAS_MATRIZ_A);
+    HashFechada *hashB = newHashFechada("Hash1000", LINHAS_MATRIZ_B);
     Aluno value;
     char key[16];
     int codition = 1;
 
-    if(hash == NULL || clone == NULL) {
+    if(hashA == NULL || hashB == NULL) {
         printf(ERROR_FALHA_ALOCACAO);
-        free(hash);
-        free(clone);
+        free(hashA);
+        free(hashB);
         return 0;
     }
+
+    readHashAlunoFromFile2(hashA, hashB);
 
     while (codition) {
         switch (menu()) {
             case 1:
                 printf("\nEntrada: ");
                 value = readAluno();
-                insertHash(hash, value);
+                insertHash(hashA, value);
+                insertHash(hashB, value);
                 break;
             case 2:
-                printHash(hash);
+                printHash(hashA);
                 printf("\n");
-                printHash(clone);
+                printHash(hashB);
                 break;
             case 3:
                 printf("\nEntrada: ");
                 scanf(" %s", key);
                 printf("\nSaída: ");
-                printAluno(searchHash(hash, key));
+                printAluno(searchHash(hashA, key));
                 break;
             case 4:
                 printf("\nEntrada: ");
                 scanf(" %s", key);
-                removeHash(hash, key);
+                removeHash(hashA, key);
+                removeHash(hashB, key);
                 break;
             case 5:
-                clearHash(hash);
+                clearHash(hashA);
                 break;
             case 6:
-                cloneHash(clone, hash);
-                break;
-            case 7:
-                printStatisticHash(hash);
+                printStatisticHash(hashA);
+                printf("\n");
+                printStatisticHash(hashB);
                 break;
             case 0:
                 codition = 0;
@@ -77,8 +80,8 @@ int main() {
         }
     }
 
-    free(hash);
-    free(clone);
+    free(hashA);
+    free(hashB);
 
     return 0;
 }

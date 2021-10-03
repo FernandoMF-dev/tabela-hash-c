@@ -9,11 +9,14 @@
 #define DIRETORIO_ARQUIVO_ENTRADA "../entrada/entrada.txt"
 #define DIRETORIO_ARQUIVO_SAIDA "../saida/"
 #define LINE_MAX_LENGTH 511
+#define FILE_NAME_MAX_LENGTH 31
 #define DELIMITER ";"
 
 // =-=-=-=-= METODOS PRIVADOS | DECLARAÇÃO =-=-=-=-=
 
 Aluno readNextAluno(FILE *fp);
+
+void writeAlunosOnFile(FILE *fp, HashFechada *hash);
 
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
@@ -33,6 +36,22 @@ Aluno readNextAluno(FILE *fp) {
     aluno.nota = (float) atof(ptr);
 
     return aluno;
+}
+
+void writeAlunosOnFile(FILE *fp, HashFechada *hash) {
+    List *list;
+    Node *node;
+    Aluno aluno;
+    for (int index = 0; index < hash->length; ++index) {
+        list = hash->elements[index];
+        node = list->first;
+
+        while (node != NULL) {
+            aluno = node->value;
+            fprintf(fp, "%d;%s;%s;%.0f\n", index, aluno.matricula, aluno.nome, aluno.nota);
+            node = node->next;
+        }
+    }
 }
 
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
@@ -71,6 +90,23 @@ void readHashAlunoFromFile2(HashFechada *hash1, HashFechada *hash2) {
         insertHash(hash1, aluno);
         insertHash(hash2, aluno);
     }
+
+    fclose(fp);
+}
+
+void writeHashOnFile(HashFechada *hash) {
+    int nomeArquivoSaidaLength = strlen(DIRETORIO_ARQUIVO_SAIDA) + FILE_NAME_MAX_LENGTH + 1;
+    char *nomeArquivoSaida = (char *) malloc(nomeArquivoSaidaLength * sizeof(char));
+    FILE *fp;
+
+    sprintf(nomeArquivoSaida, "%ssaida-%s.txt", DIRETORIO_ARQUIVO_SAIDA, hash->label);
+    fp = fopen(nomeArquivoSaida, "w");
+    if (!fp) {
+        printf(ERRO_ABRIR_ARQUIVO);
+        return;
+    }
+
+    writeAlunosOnFile(fp, hash);
 
     fclose(fp);
 }

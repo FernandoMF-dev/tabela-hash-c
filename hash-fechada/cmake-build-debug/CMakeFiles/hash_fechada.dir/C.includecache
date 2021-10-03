@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/ControleArquivoAluno.c
+headers/ControleArquivoAluno.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/ControleArquivoAluno.h
+
 /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
 stdio.h
 -

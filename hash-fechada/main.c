@@ -75,6 +75,8 @@ int main() {
                 printStatisticHash(hashB);
                 break;
             case 0:
+                writeHashOnFile(hashA);
+                writeHashOnFile(hashB);
                 codition = 0;
                 break;
         }

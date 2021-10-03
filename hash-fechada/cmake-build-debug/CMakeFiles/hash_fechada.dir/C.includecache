@@ -6,43 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/ControleArquivoAluno.c
-headers/ControleArquivoAluno.h
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/ControleArquivoAluno.h
-
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/ControleArquivoAluno.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-Aluno.h
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
-HashFechada.h
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/HashFechada.h
-
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/HashFechada.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-math.h
--
-Lista.h
+/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/Lista.c
+headers/Lista.h
 /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Lista.h
-Aluno.h
+
 /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
 
 /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Lista.h
 stdio.h
@@ -61,12 +35,4 @@ stdlib.h
 -
 Aluno.h
 /home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
-
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/main.c
-stdio.h
--
-headers/HashFechada.h
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/HashFechada.h
-headers/ControleArquivoAluno.h
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/ControleArquivoAluno.h
 

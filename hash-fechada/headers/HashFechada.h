@@ -21,6 +21,8 @@ void insertHash(HashFechada *hash, Aluno value);
 
 Aluno searchHash(HashFechada *hash, char *key);
 
+void findAndPrintHash(HashFechada *hash, char *key);
+
 void removeHash(HashFechada *hash, char *key);
 
 void clearHash(HashFechada *hash);

@@ -15,6 +15,8 @@ List *initializeElementList(int i);
 
 List **initializeElements(int length);
 
+void printHashName(HashFechada *hash);
+
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
 int hashFunction(HashFechada *hash, char *key) {
@@ -45,6 +47,12 @@ List **initializeElements(int length) {
     }
 
     return elements;
+}
+
+void printHashName(HashFechada *hash) {
+    if (strlen(hash->label)) {
+        printf("\n%s:", hash->label);
+    }
 }
 
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
@@ -81,6 +89,13 @@ void insertHash(HashFechada *hash, Aluno value) {
 Aluno searchHash(HashFechada *hash, char *key) {
     int index = hashFunction(hash, key);
     return searchList(hash->elements[index], key);
+}
+
+void findAndPrintHash(HashFechada *hash, char *key) {
+    int index = hashFunction(hash, key);
+    printHashName(hash);
+    printf("\nIndex: %d", index);
+    findAndPrintList(hash->elements[index], key);
 }
 
 void removeHash(HashFechada *hash, char *key) {
@@ -186,9 +201,7 @@ void printStatisticHash(HashFechada *hash) {
     int longestIndex = longestListHash(hash);
     int shortestIndex = shortestListHash(hash);
 
-    if (strlen(hash->label)) {
-        printf("\n%s:", hash->label);
-    }
+    printHashName(hash);
     printf("\nQuantidade total de elementos: %d", sizeHash(hash));
     printf("\nMédia de elementos por índice: %.2lf", averageNodesPerListHash(hash));
     printf("\nÍndice mais longo: %d (%d elemento(s))", longestIndex, hash->elements[longestIndex]->size);

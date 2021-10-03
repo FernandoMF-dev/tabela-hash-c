@@ -155,7 +155,7 @@ void insertList(List *list, Aluno value) {
         success = insertEmpty(list, value);
     } else if (compareAluno(list->first->value, value) > 0) {
         success = insertFirst(list, value);
-    } else if (compareAluno(list->first->value, value) < 0) {
+    } else if (compareAluno(list->last->value, value) < 0) {
         success = insertLast(list, value);
     } else {
         success = insertMiddle(list, value);
@@ -183,9 +183,33 @@ Aluno searchList(List *list, char *key) {
     if (compare == 0) {
         return node->value;
     }
-
     printf(ERRO_REGISTRO_NAO_ENCONTRADO);
     return newAluno();
+}
+
+void findAndPrintList(List *list, char *key) {
+    if (list->size == 0) {
+        printf(ERRO_LISTA_VAZIA);
+        return;
+    }
+
+    Node *node = list->first;
+    int verifications = 0;
+    int compare = compareNodeByKey(node, key);
+
+    while (node != NULL && compare != 0) {
+        node = node->next;
+        compare = compareNodeByKey(node, key);
+        verifications++;
+    }
+
+    printf("\n");
+    if (compare != 0) {
+        printf(ERRO_REGISTRO_NAO_ENCONTRADO);
+    } else {
+        printNode(node);
+    }
+    printf("\n%d registros verificados antes desse.\n", verifications);
 }
 
 void removeList(List *list, char *key) {

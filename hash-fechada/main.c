@@ -13,11 +13,9 @@ int menu() {
 
     printf("\n\n========== MENU ==========");
     printf("\n1- Inserir");
-    printf("\n2- Imprimir");
-    printf("\n3- Buscar");
-    printf("\n4- Remover");
-    printf("\n5- Limpar");
-    printf("\n6- Estatística");
+    printf("\n2- Buscar");
+    printf("\n3- Remover");
+    printf("\n4- Estatística");
     printf("\n0- Sair");
     printf("\nESCOLHA: ");
     scanf("%d", &choice);
@@ -50,26 +48,19 @@ int main() {
                 insertHash(hashB, value);
                 break;
             case 2:
-                printHash(hashA);
-                printf("\n");
-                printHash(hashB);
-                break;
-            case 3:
                 printf("\nEntrada: ");
                 scanf(" %s", key);
                 printf("\nSaída: ");
-                printAluno(searchHash(hashA, key));
+                findAndPrintHash(hashA, key);
+                findAndPrintHash(hashB, key);
                 break;
-            case 4:
+            case 3:
                 printf("\nEntrada: ");
                 scanf(" %s", key);
                 removeHash(hashA, key);
                 removeHash(hashB, key);
                 break;
-            case 5:
-                clearHash(hashA);
-                break;
-            case 6:
+            case 4:
                 printStatisticHash(hashA);
                 printf("\n");
                 printStatisticHash(hashB);

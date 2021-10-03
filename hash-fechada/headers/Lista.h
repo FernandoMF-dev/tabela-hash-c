@@ -28,4 +28,6 @@ void cloneList(List *target, List *source);
 
 void printList(List *list);
 
+void findAndPrintList(List *list, char *key);
+
 #endif //HASH_FECHADA_LISTA_H

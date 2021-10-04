@@ -37,7 +37,7 @@ int main() {
         return 0;
     }
 
-    readHashAlunoFromFile2(hashA, hashB);
+    readHashAlunoFromFile(hashA, hashB);
 
     while (codition) {
         switch (menu()) {

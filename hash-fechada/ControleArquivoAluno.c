@@ -56,9 +56,10 @@ void writeAlunosOnFile(FILE *fp, HashFechada *hash) {
 
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
 
-void readHashAlunoFromFile1(HashFechada *hash) {
+void readHashAlunoFromFile(HashFechada *hash1, HashFechada *hash2) {
     FILE *fp = fopen(DIRETORIO_ARQUIVO_ENTRADA, "r");
-    int qntd;
+    int contador = 0;
+    int registros;
 
     if (!fp) {
         printf(ERRO_ABRIR_ARQUIVO);
@@ -66,29 +67,12 @@ void readHashAlunoFromFile1(HashFechada *hash) {
     }
 
     printf(MENSSAGE_LENDO_ARQUIVO);
-    fscanf(fp, "%d", &qntd);
-    while (!feof(fp)) {
-        insertHash(hash, readNextAluno(fp));
-    }
-
-    fclose(fp);
-}
-
-void readHashAlunoFromFile2(HashFechada *hash1, HashFechada *hash2) {
-    FILE *fp = fopen(DIRETORIO_ARQUIVO_ENTRADA, "r");
-    int qntd;
-
-    if (!fp) {
-        printf(ERRO_ABRIR_ARQUIVO);
-        return;
-    }
-
-    printf(MENSSAGE_LENDO_ARQUIVO);
-    fscanf(fp, "%d", &qntd);
-    while (!feof(fp)) {
+    fscanf(fp, "%d", &registros);
+    while (!feof(fp) && contador < registros) {
         Aluno aluno = readNextAluno(fp);
         insertHash(hash1, aluno);
         insertHash(hash2, aluno);
+        contador++;
     }
 
     fclose(fp);

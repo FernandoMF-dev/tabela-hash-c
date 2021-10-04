@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/cmake-build-debug"/>
+				<Option working_dir="/home/basis/Documentos/Tabela Hash/hash-fechada/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/cmake-build-debug"/>
+				<Option working_dir="/home/basis/Documentos/Tabela Hash/hash-fechada/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/cmake-build-debug"/>
+				<Option working_dir="/home/basis/Documentos/Tabela Hash/hash-fechada/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="hash_fechada">
-				<Option output="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/cmake-build-debug/hash_fechada" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/cmake-build-debug"/>
+				<Option output="/home/basis/Documentos/Tabela Hash/hash-fechada/cmake-build-debug/hash_fechada" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/basis/Documentos/Tabela Hash/hash-fechada/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -50,15 +50,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 hash_fechada"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 hash_fechada"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="hash_fechada/fast">
-				<Option output="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/cmake-build-debug/hash_fechada" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/cmake-build-debug"/>
+				<Option output="/home/basis/Documentos/Tabela Hash/hash-fechada/cmake-build-debug/hash_fechada" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/basis/Documentos/Tabela Hash/hash-fechada/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -69,47 +69,47 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 hash_fechada/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fernando_mf/Documentos/Hash\ Fechada/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 hash_fechada/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/basis/Documentos/Tabela\ Hash/hash-fechada/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/Aluno.c">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/Aluno.c">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/ControleArquivoAluno.c">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/ControleArquivoAluno.c">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/HashFechada.c">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/HashFechada.c">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/Lista.c">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/Lista.c">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/Node.c">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/Node.c">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/ControleArquivoAluno.h">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/headers/ControleArquivoAluno.h">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/HashFechada.h">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Lista.h">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Node.h">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Node.h">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/main.c">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/main.c">
 			<Option target="hash_fechada"/>
 		</Unit>
-		<Unit filename="/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/CMakeLists.txt">
+		<Unit filename="/home/basis/Documentos/Tabela Hash/hash-fechada/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

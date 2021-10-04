@@ -6,11 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/Lista.c
-headers/Lista.h
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Lista.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/Aluno.c
+headers/Aluno.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
 
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/ControleArquivoAluno.c
+headers/ControleArquivoAluno.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/ControleArquivoAluno.h
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/HashFechada.c
+headers/HashFechada.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/Lista.c
+headers/Lista.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/Node.c
+headers/Node.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Node.h
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
 stdio.h
 -
 stdlib.h
@@ -18,21 +34,55 @@ stdlib.h
 string.h
 -
 
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Lista.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/ControleArquivoAluno.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+Aluno.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
+HashFechada.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+math.h
+-
+Lista.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
+Aluno.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
 stdio.h
 -
 stdlib.h
 -
 Node.h
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Node.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Node.h
 Aluno.h
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
 
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Node.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Node.h
 stdio.h
 -
 stdlib.h
 -
 Aluno.h
-/home/fernando_mf/Documentos/Hash Fechada/hash-fechada/headers/Aluno.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/main.c
+stdio.h
+-
+headers/HashFechada.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
+headers/ControleArquivoAluno.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/ControleArquivoAluno.h
 

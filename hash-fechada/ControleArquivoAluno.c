@@ -8,7 +8,7 @@
 #define MENSSAGE_LENDO_ARQUIVO "\n\tAVISO: Lendo arquivo, por favor aguarde...\n"
 #define DIRETORIO_ARQUIVO_ENTRADA "../entrada/entrada.txt"
 #define DIRETORIO_ARQUIVO_SAIDA "../saida/"
-#define LINE_MAX_LENGTH 511
+#define LINE_MAX_LENGTH 255
 #define FILE_NAME_MAX_LENGTH 31
 #define DELIMITER ";"
 
@@ -34,6 +34,8 @@ Aluno readNextAluno(FILE *fp) {
 
     ptr = strtok(NULL, DELIMITER);
     aluno.nota = (float) atof(ptr);
+
+    free(line);
 
     return aluno;
 }

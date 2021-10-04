@@ -6,25 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/basis/Documentos/Tabela Hash/hash-fechada/Aluno.c
-headers/Aluno.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
-
 /home/basis/Documentos/Tabela Hash/hash-fechada/ControleArquivoAluno.c
 headers/ControleArquivoAluno.h
 /home/basis/Documentos/Tabela Hash/hash-fechada/headers/ControleArquivoAluno.h
-
-/home/basis/Documentos/Tabela Hash/hash-fechada/HashFechada.c
-headers/HashFechada.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
-
-/home/basis/Documentos/Tabela Hash/hash-fechada/Lista.c
-headers/Lista.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Lista.h
-
-/home/basis/Documentos/Tabela Hash/hash-fechada/Node.c
-headers/Node.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Node.h
 
 /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
 stdio.h
@@ -77,12 +61,4 @@ stdlib.h
 -
 Aluno.h
 /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
-
-/home/basis/Documentos/Tabela Hash/hash-fechada/main.c
-stdio.h
--
-headers/HashFechada.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
-headers/ControleArquivoAluno.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/ControleArquivoAluno.h
 

@@ -7,12 +7,11 @@
 #define HASH_FECHADA_NODE_H
 
 typedef struct Node {
-    struct Node *prev;
     struct Node *next;
-    Aluno value;
+    Aluno *value;
 } Node;
 
-Node *newNode(Aluno value);
+Node *newNode(Aluno *value);
 
 void printNode(Node *node);
 

@@ -6,34 +6,34 @@
 #define ERRO_ABRIR_ARQUIVO "\n\tERRO: Erro na abertura do arquivo!\n"
 
 #define MENSSAGE_LENDO_ARQUIVO "\n\tAVISO: Lendo arquivo, por favor aguarde...\n"
-#define DIRETORIO_ARQUIVO_ENTRADA "./entrada/entrada.txt"
-#define DIRETORIO_ARQUIVO_SAIDA "./saida/"
+#define DIRETORIO_ARQUIVO_ENTRADA "../entrada/entrada.txt"
+#define DIRETORIO_ARQUIVO_SAIDA "../saida/"
 #define LINE_MAX_LENGTH 255
 #define FILE_NAME_MAX_LENGTH 31
 #define DELIMITER ";"
 
 // =-=-=-=-= METODOS PRIVADOS | DECLARAÇÃO =-=-=-=-=
 
-Aluno readNextAluno(FILE *fp);
+Aluno *readNextAluno(FILE *fp);
 
 void writeAlunosOnFile(FILE *fp, HashFechada *hash);
 
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
-Aluno readNextAluno(FILE *fp) {
-    Aluno aluno = newAluno();
+Aluno *readNextAluno(FILE *fp) {
+    Aluno *aluno = newAluno();
     char *line = (char *) malloc((LINE_MAX_LENGTH + 1) * sizeof(char));
     char *ptr;
 
     fscanf(fp, " %[^\n]%*c", line);
     ptr = strtok(line, DELIMITER);
-    strcpy(aluno.matricula, ptr);
+    strcpy(aluno->matricula, ptr);
 
     ptr = strtok(NULL, DELIMITER);
-    strcpy(aluno.nome, ptr);
+    strcpy(aluno->nome, ptr);
 
     ptr = strtok(NULL, DELIMITER);
-    aluno.nota = (float) atof(ptr);
+    aluno->nota = (float) atof(ptr);
 
     free(line);
 
@@ -43,14 +43,14 @@ Aluno readNextAluno(FILE *fp) {
 void writeAlunosOnFile(FILE *fp, HashFechada *hash) {
     List *list;
     Node *node;
-    Aluno aluno;
+    Aluno *aluno;
     for (int index = 0; index < hash->length; ++index) {
         list = hash->elements[index];
         node = list->first;
 
         while (node != NULL) {
             aluno = node->value;
-            fprintf(fp, "%d;%s;%s;%.0f\n", index, aluno.matricula, aluno.nome, aluno.nota);
+            fprintf(fp, "%d;%s;%s;%.0f\n", index, aluno->matricula, aluno->nome, aluno->nota);
             node = node->next;
         }
     }
@@ -69,9 +69,9 @@ void readHashAlunoFromFile(HashFechada *hash1, HashFechada *hash2) {
     }
 
     printf(MENSSAGE_LENDO_ARQUIVO);
-    fscanf(fp, "%d", &registros);
+    fscanf(fp, " %d", &registros);
     while (!feof(fp) && contador < registros) {
-        Aluno aluno = readNextAluno(fp);
+        Aluno *aluno = readNextAluno(fp);
         insertHash(hash1, aluno);
         insertHash(hash2, aluno);
         contador++;

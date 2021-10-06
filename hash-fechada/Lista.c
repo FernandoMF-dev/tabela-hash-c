@@ -11,9 +11,9 @@
 
 // =-=-=-=-= METODOS PRIVADOS | DECLARAÇÃO =-=-=-=-=
 
-int insertBegin(List *list, Aluno value);
+int insertBegin(List *list, Aluno *value);
 
-int insertEnd(List *list, Aluno value);
+int insertEnd(List *list, Aluno *value);
 
 void removeBegin(List *list);
 
@@ -21,7 +21,7 @@ void removeAnywhere(List *list, char *key);
 
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
-int insertBegin(List *list, Aluno value) {
+int insertBegin(List *list, Aluno *value) {
     Node *node = newNode(value);
     if (node == NULL) {
         return FALSE;
@@ -33,7 +33,7 @@ int insertBegin(List *list, Aluno value) {
     return TRUE;
 }
 
-int insertEnd(List *list, Aluno value) {
+int insertEnd(List *list, Aluno *value) {
     Node *node = newNode(value);
     if (node == NULL) {
         return FALSE;
@@ -97,7 +97,7 @@ List *newList(char *label) {
     return list;
 }
 
-void insertList(List *list, Aluno value) {
+void insertList(List *list, Aluno *value) {
     int success;
 
     if (list->size == 0) {
@@ -111,7 +111,7 @@ void insertList(List *list, Aluno value) {
     }
 }
 
-Aluno searchList(List *list, char *key) {
+Aluno *searchList(List *list, char *key) {
     if (list->size == 0) {
         printf(ERRO_LISTA_VAZIA);
         return newAluno();

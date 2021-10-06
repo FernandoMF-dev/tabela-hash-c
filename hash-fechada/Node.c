@@ -6,7 +6,7 @@
 
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
 
-Node *newNode(Aluno value) {
+Node *newNode(Aluno *value) {
     Node *node = (Node *) malloc(sizeof(Node));
 
     if (node == NULL) {
@@ -29,7 +29,7 @@ int compareNodeByKey(Node *node, char *key) {
         return 2;
     }
 
-    Aluno element = node->value;
+    Aluno *element = node->value;
 
     if (compareAlunoByKey(element, key) < 0) {
         return -1;

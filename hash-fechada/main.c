@@ -26,7 +26,7 @@ int menu() {
 int main() {
     HashFechada *hashA = newHashFechada("Hash997", LINHAS_MATRIZ_A);
     HashFechada *hashB = newHashFechada("Hash1000", LINHAS_MATRIZ_B);
-    Aluno value;
+    Aluno *value;
     char key[16];
     int codition = 1;
 

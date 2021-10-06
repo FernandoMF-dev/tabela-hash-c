@@ -16,9 +16,9 @@ typedef struct List {
 
 List *newList(char *label);
 
-void insertList(List *list, Aluno value);
+void insertList(List *list, Aluno *value);
 
-Aluno searchList(List *list, char *key);
+Aluno *searchList(List *list, char *key);
 
 void removeList(List *list, char *key);
 

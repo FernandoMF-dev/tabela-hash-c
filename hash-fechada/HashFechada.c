@@ -81,12 +81,12 @@ HashFechada *newHashFechada(char *label, int length) {
     return hash;
 }
 
-void insertHash(HashFechada *hash, Aluno value) {
-    int index = hashFunction(hash, value.matricula);
+void insertHash(HashFechada *hash, Aluno *value) {
+    int index = hashFunction(hash, value->matricula);
     insertList(hash->elements[index], value);
 }
 
-Aluno searchHash(HashFechada *hash, char *key) {
+Aluno *searchHash(HashFechada *hash, char *key) {
     int index = hashFunction(hash, key);
     return searchList(hash->elements[index], key);
 }
@@ -178,7 +178,7 @@ double standardDeviationHash(HashFechada *hash) {
         standardDeviation += pow((double) (hash->elements[i]->size - average), 2);
     }
 
-    return pow(standardDeviation / 2, 0.5);
+    return pow(standardDeviation / sizeHash(hash), 0.5);
 }
 
 int countListsNormalDistribution(HashFechada *hash) {

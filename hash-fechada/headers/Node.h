@@ -8,10 +8,10 @@
 
 typedef struct Node {
     struct Node *next;
-    Aluno value;
+    Aluno *value;
 } Node;
 
-Node *newNode(Aluno value);
+Node *newNode(Aluno *value);
 
 void printNode(Node *node);
 

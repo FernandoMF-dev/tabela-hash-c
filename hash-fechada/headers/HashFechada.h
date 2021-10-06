@@ -17,9 +17,9 @@ typedef struct HashFechada {
 
 HashFechada *newHashFechada(char *label, int length);
 
-void insertHash(HashFechada *hash, Aluno value);
+void insertHash(HashFechada *hash, Aluno *value);
 
-Aluno searchHash(HashFechada *hash, char *key);
+Aluno *searchHash(HashFechada *hash, char *key);
 
 void findAndPrintHash(HashFechada *hash, char *key);
 

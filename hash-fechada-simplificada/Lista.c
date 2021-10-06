@@ -11,23 +11,17 @@
 
 // =-=-=-=-= METODOS PRIVADOS | DECLARAÇÃO =-=-=-=-=
 
-int insertEmpty(List *list, Aluno value);
+int insertBegin(List *list, Aluno value);
 
-int insertFirst(List *list, Aluno value);
+int insertEnd(List *list, Aluno value);
 
-int insertLast(List *list, Aluno value);
+void removeBegin(List *list);
 
-int insertMiddle(List *list, Aluno value);
-
-void removeFirst(List *list);
-
-void removeLast(List *list);
-
-void removeMiddle(List *list, char *key);
+void removeAnywhere(List *list, char *key);
 
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
-int insertEmpty(List *list, Aluno value) {
+int insertBegin(List *list, Aluno value) {
     Node *node = newNode(value);
     if (node == NULL) {
         return FALSE;
@@ -39,93 +33,48 @@ int insertEmpty(List *list, Aluno value) {
     return TRUE;
 }
 
-int insertFirst(List *list, Aluno value) {
+int insertEnd(List *list, Aluno value) {
     Node *node = newNode(value);
     if (node == NULL) {
         return FALSE;
     }
 
-    node->next = list->first;
-    list->first->prev = node;
-    list->first = node;
-
-    return TRUE;
-}
-
-int insertLast(List *list, Aluno value) {
-    Node *node = newNode(value);
-    if (node == NULL) {
-        return FALSE;
-    }
-
-    node->prev = list->last;
     list->last->next = node;
     list->last = node;
 
     return TRUE;
 }
 
-int insertMiddle(List *list, Aluno value) {
-    Node *node = newNode(value);
-    if (node == NULL) {
-        return FALSE;
-    }
-
-    Node *aux = list->first;
-    while (compareAluno(aux->value, node->value) < 0) {
-        aux = aux->next;
-    }
-
-    node->next = aux;
-    node->prev = aux->prev;
-    aux->prev->next = node;
-    aux->prev = node;
-
-    return TRUE;
-}
-
-void removeFirst(List *list) {
+void removeBegin(List *list) {
     Node *node = list->first;
     Node *next = node->next;
 
-    next->prev = NULL;
     node->next = NULL;
     list->first = next;
     free(node);
     list->size--;
 }
 
-void removeLast(List *list) {
-    Node *node = list->last;
-    Node *prev = node->prev;
-
-    prev->next = NULL;
-    list->last = prev;
-    free(node);
-    list->size--;
-}
-
-void removeMiddle(List *list, char *key) {
-    Node *node = list->first;
+void removeAnywhere(List *list, char *key) {
+    Node *prev = list->first;
+    Node *node = prev->next;
     int exists = compareNodeByKey(node, key);
 
-    while (node != NULL && exists < 0) {
-        node = node->next;
+    while (node != NULL && exists != 0) {
+        prev = prev->next;
+        node = prev->next;
         exists = compareNodeByKey(node, key);
     }
 
-    if (exists > 0) {
+    if (exists != 0) {
         printf(ERRO_REGISTRO_NAO_ENCONTRADO);
         return;
     }
 
-    Node *prev = node->prev;
-    Node *next = node->next;
-
-    next->prev = prev;
-    prev->next = next;
-    node->prev = NULL;
-    node->next = NULL;
+    prev->next = node->next;
+    if (prev->next == NULL) {
+        list->last = prev;
+    }
     free(node);
     list->size--;
 }
@@ -152,13 +101,9 @@ void insertList(List *list, Aluno value) {
     int success;
 
     if (list->size == 0) {
-        success = insertEmpty(list, value);
-    } else if (compareAluno(list->first->value, value) > 0) {
-        success = insertFirst(list, value);
-    } else if (compareAluno(list->last->value, value) < 0) {
-        success = insertLast(list, value);
+        success = insertBegin(list, value);
     } else {
-        success = insertMiddle(list, value);
+        success = insertEnd(list, value);
     }
 
     if (success) {
@@ -175,7 +120,7 @@ Aluno searchList(List *list, char *key) {
     Node *node = list->first;
     int compare = compareNodeByKey(node, key);
 
-    while (node != NULL && compare < 0) {
+    while (node != NULL && compare != 0) {
         node = node->next;
         compare = compareNodeByKey(node, key);
     }
@@ -215,18 +160,15 @@ void findAndPrintList(List *list, char *key) {
 void removeList(List *list, char *key) {
     if (list->size == 0) {
         printf(ERRO_LISTA_VAZIA);
-    }
-
-    if (list->size == 1 && compareNodeByKey(list->first, key) == 0) {
-        return clearList(list);
+        return;
     }
     if (compareNodeByKey(list->first, key) == 0) {
-        return removeFirst(list);
+        if (list->size == 1) {
+            return clearList(list);
+        }
+        return removeBegin(list);
     }
-    if (compareNodeByKey(list->last, key) == 0) {
-        return removeLast(list);
-    }
-    removeMiddle(list, key);
+    removeAnywhere(list, key);
 }
 
 void clearList(List *list) {

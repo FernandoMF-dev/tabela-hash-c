@@ -15,7 +15,6 @@ Node *newNode(Aluno value) {
     }
 
     node->value = value;
-    node->prev = NULL;
     node->next = NULL;
 
     return node;

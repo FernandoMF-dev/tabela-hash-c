@@ -189,7 +189,7 @@ int countListsNormalDistribution(HashFechada *hash) {
 
     for (int i = 0; i < hash->length; i++) {
         size = (double) hash->elements[i]->size;
-        if (size < (average - standardDeviation) || size > (average + standardDeviation)) {
+        if (size >= (average - standardDeviation) && size <= (average + standardDeviation)) {
             count++;
         }
     }

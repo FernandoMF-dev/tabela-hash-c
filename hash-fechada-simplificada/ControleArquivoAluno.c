@@ -20,6 +20,9 @@ void writeAlunosOnFile(FILE *fp, HashFechada *hash);
 
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
+/*
+Lê a próxima linha do arquivo e preencha dados de Aluno
+*/
 Aluno *readNextAluno(FILE *fp) {
     Aluno *aluno = newAluno();
     char *line = (char *) malloc((LINE_MAX_LENGTH + 1) * sizeof(char));
@@ -40,6 +43,9 @@ Aluno *readNextAluno(FILE *fp) {
     return aluno;
 }
 
+/*
+Escreve todos os alunos de uma hash num arquivo
+*/
 void writeAlunosOnFile(FILE *fp, HashFechada *hash) {
     List *list;
     Node *node;
@@ -58,6 +64,9 @@ void writeAlunosOnFile(FILE *fp, HashFechada *hash) {
 
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
 
+/*
+Lê o arquivo na URL específicada e preenche as hash de acordo com seu o conteúdo 
+*/
 void readHashAlunoFromFile(HashFechada *hash1, HashFechada *hash2) {
     FILE *fp = fopen(DIRETORIO_ARQUIVO_ENTRADA, "r");
     int contador = 0;
@@ -80,6 +89,9 @@ void readHashAlunoFromFile(HashFechada *hash1, HashFechada *hash2) {
     fclose(fp);
 }
 
+/*
+Cria um arquivo com os registros de uma hash
+*/
 void writeHashOnFile(HashFechada *hash) {
     int nomeArquivoSaidaLength = strlen(DIRETORIO_ARQUIVO_SAIDA) + FILE_NAME_MAX_LENGTH + 1;
     char *nomeArquivoSaida = (char *) malloc(nomeArquivoSaidaLength * sizeof(char));

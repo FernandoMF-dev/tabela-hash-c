@@ -6,6 +6,9 @@
 
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
 
+/*
+ * Inicializa e retorna uma nova intância de Node
+ * */
 Node *newNode(Aluno *value) {
     Node *node = (Node *) malloc(sizeof(Node));
 
@@ -20,10 +23,21 @@ Node *newNode(Aluno *value) {
     return node;
 }
 
+/*
+ * Imprime uma struct Node
+ * */
 void printNode(Node *node) {
     printAluno(node->value);
 }
 
+/*
+ * Compara se uma chave (key) corresponde ao valor de um Node.
+ *
+ * Se sim, retorna 0.
+ * Se a chave for menor, retorna -1.
+ * Se a chave for maior, retorna 1.
+ * Se Node for NULL, retorna 2.
+ * */
 int compareNodeByKey(Node *node, char *key) {
     if (node == NULL) {
         return 2;

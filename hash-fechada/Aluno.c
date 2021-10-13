@@ -3,6 +3,9 @@
 #define MATRICULA_MAX_LENGTH 15
 #define NOME_MAX_LENGTH 255
 
+/*
+ * Cria e retorna uma nova instância vazia de Aluno
+ * */
 Aluno *newAluno() {
     Aluno *aluno = (Aluno *) malloc(sizeof(Aluno));
 
@@ -13,6 +16,9 @@ Aluno *newAluno() {
     return aluno;
 }
 
+/*
+ * Lê e retorna um novo aluno do terminal
+ * */
 Aluno *readAluno() {
     Aluno *aluno = newAluno();
 
@@ -30,10 +36,24 @@ Aluno *readAluno() {
     return aluno;
 }
 
+/*
+ * Compara se uma chave (key) corresponde a matrícula de um aluno.
+ *
+ * Se sim, retorna 0.
+ * Se a chave for maior, retorna um inteiro maior que 0.
+ * Se a chave for menor, retorna um inteiro menor que 0.
+ * */
 int compareAlunoByKey(Aluno *aluno, char *key) {
     return strcmp(aluno->matricula, key);
 }
 
+/*
+ * Compara dois alunos.
+ *
+ * Se forem iguais, retorna 0.
+ * Se aluno1 for o maior, retorna um inteiro maior que 0.
+ * Se aluno1 for o menor, retorna um inteiro menor que 0.
+ * */
 int compareAluno(Aluno *aluno1, Aluno *aluno2) {
     int result = strcmp(aluno1->matricula, aluno2->matricula);
 
@@ -47,6 +67,9 @@ int compareAluno(Aluno *aluno1, Aluno *aluno2) {
     return result;
 }
 
+/*
+ * Imprime os valores de um Aluno
+ * */
 void printAluno(Aluno *aluno) {
     printf("{ 'Matricula': '%s', 'Nome': '%s', 'Nota': %.2f }", aluno->matricula, aluno->nome, aluno->nota);
 }

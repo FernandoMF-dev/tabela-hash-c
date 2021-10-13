@@ -47,6 +47,13 @@ int compareAlunoByKey(Aluno *aluno, char *key) {
     return strcmp(aluno->matricula, key);
 }
 
+/*
+Compara dois alunos.
+
+Se forem iguais, retorna 0.
+Se aluno1 for o maior, retorna um inteiro maior que 0.
+Se aluno1 for o menor, retorna um inteiro menor que 0.
+*/
 int compareAluno(Aluno *aluno1, Aluno *aluno2) {
     int result = strcmp(aluno1->matricula, aluno2->matricula);
 

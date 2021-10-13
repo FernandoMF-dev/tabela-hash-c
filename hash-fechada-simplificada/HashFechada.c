@@ -27,7 +27,6 @@ int hashFunction(HashFechada *hash, char *key) {
     return keyIntValue % hash->length;
 }
 
-
 /*
 Inicializa e retorna uma lista de acordo com o índice da Hash passado
 */

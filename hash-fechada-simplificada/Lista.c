@@ -21,6 +21,9 @@ void removeAnywhere(List *list, char *key);
 
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
+/*
+Insere um novo registro numa Lista vazia
+*/
 int insertBegin(List *list, Aluno *value) {
     Node *node = newNode(value);
     if (node == NULL) {
@@ -33,6 +36,9 @@ int insertBegin(List *list, Aluno *value) {
     return TRUE;
 }
 
+/*
+Insere um novo registro no final de uma Lista
+*/
 int insertEnd(List *list, Aluno *value) {
     Node *node = newNode(value);
     if (node == NULL) {
@@ -45,6 +51,9 @@ int insertEnd(List *list, Aluno *value) {
     return TRUE;
 }
 
+/*
+Remove o registro no inicio da Lista
+*/
 void removeBegin(List *list) {
     Node *node = list->first;
     Node *next = node->next;
@@ -55,6 +64,9 @@ void removeBegin(List *list) {
     list->size--;
 }
 
+/*
+Remove um registro da Lista de acordo com uma chave
+*/
 void removeAnywhere(List *list, char *key) {
     Node *prev = list->first;
     Node *node = prev->next;
@@ -81,6 +93,9 @@ void removeAnywhere(List *list, char *key) {
 
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
 
+/*
+Inicializa e retorna uma nova instância de Lista
+*/
 List *newList(char *label) {
     List *list = (List *) malloc(sizeof(List));
 
@@ -97,6 +112,9 @@ List *newList(char *label) {
     return list;
 }
 
+/*
+Insere um novo registro numa Lista
+*/
 void insertList(List *list, Aluno *value) {
     int success;
 
@@ -111,6 +129,12 @@ void insertList(List *list, Aluno *value) {
     }
 }
 
+/*
+Busca um registro na Lista de acordo com uma chave
+
+Se encontrar, retorna os dados do registro.
+Se não, retorna NULL
+*/
 Aluno *searchList(List *list, char *key) {
     if (list->size == 0) {
         printf(ERRO_LISTA_VAZIA);
@@ -132,6 +156,12 @@ Aluno *searchList(List *list, char *key) {
     return newAluno();
 }
 
+/*
+Busca um registro na Lista e imprime os seguintes dados sobre ele:
+
+- Os dados do registro;
+- O número de registros que foram veríficados antes do alvo ser encontrado;
+*/
 void findAndPrintList(List *list, char *key) {
     if (list->size == 0) {
         printf(ERRO_LISTA_VAZIA);
@@ -157,6 +187,9 @@ void findAndPrintList(List *list, char *key) {
     printf("\n%d registros verificados antes desse.\n", verifications);
 }
 
+/*
+Remove um registro da Lista de acordo com uma chave
+*/
 void removeList(List *list, char *key) {
     if (list->size == 0) {
         printf(ERRO_LISTA_VAZIA);
@@ -171,6 +204,9 @@ void removeList(List *list, char *key) {
     removeAnywhere(list, key);
 }
 
+/*
+Remove todos os registros da Lista
+*/
 void clearList(List *list) {
     if (list->size > 1) {
         free(list->first);
@@ -184,6 +220,9 @@ void clearList(List *list) {
     list->last = NULL;
 }
 
+/*
+Copia os registros da Lista 'source' para a Lista 'target'
+*/
 void cloneList(List *target, List *source) {
     Node *node = source->first;
     clearList(target);
@@ -194,6 +233,9 @@ void cloneList(List *target, List *source) {
     }
 }
 
+/*
+Imprimi uma struct List
+*/
 void printList(List *list) {
     Node *node = list->first;
 

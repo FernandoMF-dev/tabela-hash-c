@@ -71,7 +71,7 @@ void printHashName(HashFechada *hash) {
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
 
 /*
-Cria e inicializa uma nova instância de Hash
+Inicializa e retorna uma nova instância de Hash
 */
 HashFechada *newHashFechada(char *label, int length) {
     if (length < 1) {

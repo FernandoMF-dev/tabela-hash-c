@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/hash_aberta.dir/main.c.o CMakeFiles/hash_aberta.dir/Aluno.c.o CMakeFiles/hash_aberta.dir/ControleArquivoAluno.c.o CMakeFiles/hash_aberta.dir/HashAberta.c.o -o hash_aberta  -lm 

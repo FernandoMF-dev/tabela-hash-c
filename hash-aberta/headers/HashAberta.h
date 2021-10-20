@@ -45,9 +45,9 @@ int getBlockLength(HashAberta *hash, int block);
 
 //double averageNodesPerBlockHash(HashAberta *hash);
 
-//int shortestBlockHash(HashAberta *hash);
+int shortestBlockHash(HashAberta *hash);
 
-//int longestBlockHash(HashAberta *hash);
+int longestBlockHash(HashAberta *hash);
 
 //void printStatisticHash(HashAberta *hash);
 

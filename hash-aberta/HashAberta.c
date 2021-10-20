@@ -23,9 +23,11 @@ Node **createNodeSequence(int length);
 
 HashAberta *expandsHash(HashAberta *source);
 
-int regulateBlockIndex(HashAberta *base, int block);
+int regulateHashIndex(HashAberta *base, int index);
 
 int verifyContinueSearch(Node *node, int counter, int hashLength);
+
+int findInitialShortestBlockIndex(HashAberta *hash);
 
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
@@ -78,19 +80,29 @@ HashAberta *expandsHash(HashAberta *source) {
     return target;
 }
 
-int regulateBlockIndex(HashAberta *base, int block) {
-    while (block > base->length - 1) {
-        block -= base->length;
+int regulateHashIndex(HashAberta *base, int index) {
+    while (index > base->length - 1) {
+        index -= base->length;
     }
-    while (block < 0) {
-        block += base->length;
+    while (index < 0) {
+        index += base->length;
     }
 
-    return block;
+    return index;
 }
 
 int verifyContinueSearch(Node *node, int counter, int hashLength) {
     return node->status != STATUS_VAZIO && counter < hashLength;
+}
+
+int findInitialShortestBlockIndex(HashAberta *hash) {
+    int index = 0;
+
+    while (hash->elements[regulateHashIndex(hash, index - 1)]->status != STATUS_VAZIO && index < hash->length) {
+        index++;
+    }
+
+    return index;
 }
 
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
@@ -226,7 +238,7 @@ void printHash(HashAberta *hash) {
 }
 
 void printBlock(HashAberta *hash, int block) {
-    block = regulateBlockIndex(hash, block);
+    block = regulateHashIndex(hash, block);
     Node *node = hash->elements[block];
     int alreadyPrinted = 0;
 
@@ -249,7 +261,7 @@ void printBlock(HashAberta *hash, int block) {
 }
 
 int getBlockLength(HashAberta *hash, int block) {
-    block = regulateBlockIndex(hash, block);
+    block = regulateHashIndex(hash, block);
     Node *node = hash->elements[block];
     int length = 0;
 
@@ -259,4 +271,41 @@ int getBlockLength(HashAberta *hash, int block) {
     }
 
     return length;
+}
+
+int shortestBlockHash(HashAberta *hash) {
+    int initialIndex = findInitialShortestBlockIndex(hash);
+    int shortestIndex = initialIndex;
+    int shortestLength = getBlockLength(hash, shortestIndex);
+    int index = shortestLength + initialIndex + 1;
+    int length;
+
+    while (index < hash->length + initialIndex) {
+        length = getBlockLength(hash, index);
+        if (shortestLength == 0 || (length > 0 && length < shortestLength)) {
+            shortestLength = length;
+            shortestIndex = index;
+        }
+        index += length + 1;
+    }
+
+    return shortestIndex;
+}
+
+int longestBlockHash(HashAberta *hash) {
+    int longestIndex = 0;
+    int longestLength = getBlockLength(hash, longestIndex);
+    int index = longestLength + 1;
+    int length;
+
+    while (index < hash->length) {
+        length = getBlockLength(hash, index);
+        if (length > longestLength) {
+            longestLength = length;
+            longestIndex = index;
+        }
+        index += length + 1;
+    }
+
+    return longestIndex;
 }

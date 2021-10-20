@@ -3,6 +3,7 @@
 // =-=-=-=-= CONSTANTES =-=-=-=-=
 
 #define ERROR_FALHA_ALOCACAO "\n\tERRO: Erro durante alocação de memória!\n"
+#define ERROR_REGISTRO_NAO_ENCONTRADO "\n\tERRO: Registro não encontrado!\n"
 #define ERROR_INVALID_LENGTH "\n\tERRO: Não e possível criar uma HASH com menos de 1 índice!\n"
 
 #define EXPANSAO_MULTIPLICADOR 2
@@ -104,4 +105,18 @@ HashAberta *insertHash(HashAberta *hash, Aluno *value) {
     hash->size++;
 
     return hash;
+}
+
+Aluno *searchHash(HashAberta *hash, char *key) {
+    int index = hashFunction(hash, key);
+    Node *node = hash->elements[index];
+
+    while (node->status != STATUS_VAZIO) {
+        if (compareAlunoByKey(node->value, key) == 0) {
+            return node->value;
+        }
+        node = node->next;
+    }
+    printf(ERROR_REGISTRO_NAO_ENCONTRADO);
+    return NULL;
 }

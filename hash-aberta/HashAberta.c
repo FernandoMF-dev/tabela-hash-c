@@ -21,7 +21,7 @@ Node *newNode(int index);
 
 Node **createNodeSequence(int length);
 
-HashAberta *expandsHash(HashAberta *base);
+HashAberta *expandsHash(HashAberta *source);
 
 int regulateBlockIndex(HashAberta *base, int block);
 
@@ -54,26 +54,26 @@ Node **createNodeSequence(int length) {
 
     Node **sequence = (Node **) malloc(length * sizeof(Node *));
     sequence[0] = newNode(0);
-    Node *aux = sequence[0];
+    Node *aux;
 
     for (int i = 1; i < length; ++i) {
-        aux->next = newNode(i);
+        aux = newNode(i);
+        sequence[i - 1]->next = aux;
         sequence[i] = aux;
-        aux = aux->next;
     }
-    aux->next = sequence[0];
+    sequence[length - 1]->next = sequence[0];
 
     return sequence;
 }
 
-HashAberta *expandsHash(HashAberta *base) {
-    HashAberta *hash = newHashAberta(base->label, hash->length * EXPANSAO_MULTIPLICADOR, hash->chargeFactor);
+HashAberta *expandsHash(HashAberta *source) {
+    HashAberta *target = newHashAberta(source->label, source->length * EXPANSAO_MULTIPLICADOR, source->chargeFactor);
 
-    cloneHash(hash, base);
+    cloneHash(target, source);
 
-    free(base->elements);
-    free(base);
-    return hash;
+    free(source->elements);
+    free(source);
+    return target;
 }
 
 int regulateBlockIndex(HashAberta *base, int block) {
@@ -150,7 +150,7 @@ void findAndPrintHash(HashAberta *hash, char *key) {
     }
 
     if (found) {
-        printf("\nO registro foi encontrado no índice %d", node->index);
+        printf("\nO registro foi encontrado no índice %d\n", node->index);
         printAluno(node->value);
     } else {
         printf(ERROR_REGISTRO_NAO_ENCONTRADO);
@@ -201,14 +201,15 @@ void cloneHash(HashAberta *target, HashAberta *source) {
 void printHash(HashAberta *hash) {
     int counter = 0;
 
-    printf("[ ");
+    printf("%s(%d/%d)[ ", hash->label, hash->size, hash->length);
     for (int i = 0; i < hash->length; ++i) {
         if (hash->elements[i]->status == STATUS_OCUPADO) {
             printAluno(hash->elements[i]->value);
             counter++;
-            if (counter < hash->size) {
-                printf(", ");
+            if (counter >= hash->size) {
+                break;
             }
+            printf(", ");
         }
     }
     printf(" ]");

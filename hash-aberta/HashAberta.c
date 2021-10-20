@@ -29,6 +29,8 @@ int verifyContinueSearch(Node *node, int counter, int hashLength);
 
 int findInitialShortestBlockIndex(HashAberta *hash);
 
+Node *getNode(HashAberta *hash, int index);
+
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
 int hashFunction(HashAberta *hash, char *key) {
@@ -42,6 +44,11 @@ int compareNodeByKey(Node *node, char *key) {
 
 Node *newNode(int index) {
     Node *node = (Node *) malloc(sizeof(Node));
+
+    if (node == NULL) {
+        printf(ERROR_FALHA_ALOCACAO);
+        return NULL;
+    }
 
     node->index = index;
     node->status = STATUS_VAZIO;
@@ -57,6 +64,12 @@ Node **createNodeSequence(int length) {
     }
 
     Node **sequence = (Node **) malloc(length * sizeof(Node *));
+
+    if (sequence == NULL) {
+        printf(ERROR_FALHA_ALOCACAO);
+        return NULL;
+    }
+
     sequence[0] = newNode(0);
     Node *aux;
 
@@ -98,23 +111,41 @@ int verifyContinueSearch(Node *node, int counter, int hashLength) {
 int findInitialShortestBlockIndex(HashAberta *hash) {
     int index = 0;
 
-    while (hash->elements[regulateHashIndex(hash, index - 1)]->status != STATUS_VAZIO && index < hash->length) {
+    while (verifyContinueSearch(getNode(hash, index - 1), index, hash->length)) {
         index++;
     }
 
     return index;
 }
 
+Node *getNode(HashAberta *hash, int index) {
+    return hash->elements[regulateHashIndex(hash, index)];
+}
+
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
 
 HashAberta *newHashAberta(char *label, int length, float chargeFactor) {
+    if (length <= 1) {
+        printf(ERROR_INVALID_LENGTH);
+        return NULL;
+    }
+
     HashAberta *hash = (HashAberta *) malloc(sizeof(HashAberta));
+
+    if (hash == NULL) {
+        printf(ERROR_FALHA_ALOCACAO);
+        return NULL;
+    }
 
     hash->label = label;
     hash->length = length;
     hash->chargeFactor = chargeFactor;
     hash->size = 0;
     hash->elements = createNodeSequence(hash->length);
+
+    if (hash->elements == NULL) {
+        return NULL;
+    }
 
     return hash;
 }
@@ -238,8 +269,7 @@ void printHash(HashAberta *hash) {
 }
 
 void printBlock(HashAberta *hash, int block) {
-    block = regulateHashIndex(hash, block);
-    Node *node = hash->elements[block];
+    Node *node = getNode(hash, block);
     int alreadyPrinted = 0;
 
     printf("(%d)[ ", getBlockLength(hash, block));
@@ -261,8 +291,7 @@ void printBlock(HashAberta *hash, int block) {
 }
 
 int getBlockLength(HashAberta *hash, int block) {
-    block = regulateHashIndex(hash, block);
-    Node *node = hash->elements[block];
+    Node *node = getNode(hash, block);
     int length = 0;
 
     while (node->status != STATUS_VAZIO) {

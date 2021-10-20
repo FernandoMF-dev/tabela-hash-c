@@ -142,3 +142,16 @@ void removeHash(HashAberta *hash, char *key) {
     }
     printf(ERROR_REGISTRO_NAO_ENCONTRADO);
 }
+
+void clearHash(HashAberta *hash) {
+    Node *node = hash->elements[0];
+
+    do {
+        if (node->status != STATUS_VAZIO) {
+            node->status = STATUS_VAZIO;
+            free(node->value);
+        }
+        node = node->next;
+    } while (node->index != 0);
+    hash->size = 0;
+}

@@ -8,18 +8,19 @@
 #ifndef HASH_ABERTA_HASHABERTA_H
 #define HASH_ABERTA_HASHABERTA_H
 
-typedef struct HashAbertaNode {
+typedef struct Node {
     int index;
     int status;
     Aluno *value;
-} HashAbertaNode;
+    struct Node *next;
+} Node;
 
 typedef struct HashAberta {
     char *label;
     int length;
     int size;
     float chargeFactor;
-    HashAbertaNode *elements;
+    Node *node;
 } HashAberta;
 
 HashAberta *newHashAberta(char *label, int length, float chargeFactor);

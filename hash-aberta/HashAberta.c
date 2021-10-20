@@ -66,14 +66,8 @@ Node **createNodeSequence(int length) {
 
 HashAberta *expandsHash(HashAberta *base) {
     HashAberta *hash = newHashAberta(base->label, hash->length * EXPANSAO_MULTIPLICADOR, hash->chargeFactor);
-    Node *node = base->elements[0];
 
-    do {
-        if (node->status == STATUS_OCUPADO) {
-            insertHash(hash, node->value);
-        }
-        node = node->next;
-    } while (node->index != 0);
+    cloneHash(hash, base);
 
     free(base->elements);
     free(base);
@@ -154,4 +148,15 @@ void clearHash(HashAberta *hash) {
         node = node->next;
     } while (node->index != 0);
     hash->size = 0;
+}
+
+void cloneHash(HashAberta *target, HashAberta *source) {
+    Node *node = source->elements[0];
+
+    do {
+        if (node->status == STATUS_OCUPADO) {
+            insertHash(target, node->value);
+        }
+        node = node->next;
+    } while (node->index != 0);
 }

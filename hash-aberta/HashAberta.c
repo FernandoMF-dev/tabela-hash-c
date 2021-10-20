@@ -16,7 +16,7 @@ int hashFunction(HashAberta *hash, char *key);
 
 Node *newNode(int index);
 
-Node *createNodeSequence(int length);
+Node **createNodeSequence(int length);
 
 HashAberta *expandsHash(HashAberta *base);
 
@@ -33,21 +33,23 @@ Node *newNode(int index) {
     return node;
 }
 
-Node *createNodeSequence(int length) {
+Node **createNodeSequence(int length) {
     if (length < 1) {
         return NULL;
     }
 
-    Node *first = newNode(0);
-    Node *aux = first;
+    Node **sequence = (Node **) malloc(length * sizeof(Node *));
+    sequence[0] = newNode(0);
+    Node *aux = sequence[0];
 
     for (int i = 1; i < length; ++i) {
         aux->next = newNode(i);
+        sequence[i] = aux;
         aux = aux->next;
     }
-    aux->next = first;
+    aux->next = sequence[0];
 
-    return first;
+    return sequence;
 }
 
 int hashFunction(HashAberta *hash, char *key) {
@@ -57,7 +59,7 @@ int hashFunction(HashAberta *hash, char *key) {
 
 HashAberta *expandsHash(HashAberta *base) {
     HashAberta *hash = newHashAberta(base->label, hash->length * EXPANSAO_MULTIPLICADOR, hash->chargeFactor);
-    Node *node = base->node;
+    Node *node = base->elements[0];
 
     do {
         if (node->status == STATUS_OCUPADO) {
@@ -66,7 +68,7 @@ HashAberta *expandsHash(HashAberta *base) {
         node = node->next;
     } while (node->index != 0);
 
-    free(base->node);
+    free(base->elements);
     free(base);
     return hash;
 }
@@ -80,7 +82,7 @@ HashAberta *newHashAberta(char *label, int length, float chargeFactor) {
     hash->length = length;
     hash->chargeFactor = chargeFactor;
     hash->size = 0;
-    hash->node = createNodeSequence(hash->length);
+    hash->elements = createNodeSequence(hash->length);
 
     return hash;
 }
@@ -90,12 +92,9 @@ HashAberta *insertHash(HashAberta *hash, Aluno *value) {
         hash = expandsHash(hash);
     }
 
-    Node *node = hash->node;
     int index = hashFunction(hash, value->matricula);
+    Node *node = hash->elements[index];
 
-    while (index != node->index) {
-        node = node->next;
-    }
     while (node->status == STATUS_OCUPADO) {
         node = node->next;
     }

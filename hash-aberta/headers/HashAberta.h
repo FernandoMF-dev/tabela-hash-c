@@ -20,7 +20,7 @@ typedef struct HashAberta {
     int length;
     int size;
     float chargeFactor;
-    Node *node;
+    Node **elements;
 } HashAberta;
 
 HashAberta *newHashAberta(char *label, int length, float chargeFactor);

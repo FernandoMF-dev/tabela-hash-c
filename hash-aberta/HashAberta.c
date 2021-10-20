@@ -25,6 +25,8 @@ HashAberta *expandsHash(HashAberta *source);
 
 int regulateBlockIndex(HashAberta *base, int block);
 
+int verifyContinueSearch(Node *node, int counter, int hashLength);
+
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
 int hashFunction(HashAberta *hash, char *key) {
@@ -87,6 +89,10 @@ int regulateBlockIndex(HashAberta *base, int block) {
     return block;
 }
 
+int verifyContinueSearch(Node *node, int counter, int hashLength) {
+    return node->status != STATUS_VAZIO && counter < hashLength;
+}
+
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
 
 HashAberta *newHashAberta(char *label, int length, float chargeFactor) {
@@ -123,12 +129,14 @@ HashAberta *insertHash(HashAberta *hash, Aluno *value) {
 Aluno *searchHash(HashAberta *hash, char *key) {
     int index = hashFunction(hash, key);
     Node *node = hash->elements[index];
+    int counter = 0;
 
-    while (node->status != STATUS_VAZIO) {
+    while (verifyContinueSearch(node, counter, hash->length)) {
         if (compareNodeByKey(node, key)) {
             return node->value;
         }
         node = node->next;
+        counter++;
     }
     printf(ERROR_REGISTRO_NAO_ENCONTRADO);
     return NULL;
@@ -140,13 +148,13 @@ void findAndPrintHash(HashAberta *hash, char *key) {
     int counter = 0;
     int found = 0;
 
-    while (node->status != STATUS_VAZIO) {
+    while (verifyContinueSearch(node, counter, hash->length)) {
         if (compareNodeByKey(node, key)) {
             found = 1;
             break;
         }
-        counter++;
         node = node->next;
+        counter++;
     }
 
     if (found) {
@@ -161,8 +169,9 @@ void findAndPrintHash(HashAberta *hash, char *key) {
 void removeHash(HashAberta *hash, char *key) {
     int index = hashFunction(hash, key);
     Node *node = hash->elements[index];
+    int counter = 0;
 
-    while (node->status != STATUS_VAZIO) {
+    while (verifyContinueSearch(node, counter, hash->length)) {
         if (compareNodeByKey(node, key)) {
             node->status = STATUS_APAGADO;
             free(node->value);
@@ -170,6 +179,7 @@ void removeHash(HashAberta *hash, char *key) {
             return;
         }
         node = node->next;
+        counter++;
     }
     printf(ERROR_REGISTRO_NAO_ENCONTRADO);
 }

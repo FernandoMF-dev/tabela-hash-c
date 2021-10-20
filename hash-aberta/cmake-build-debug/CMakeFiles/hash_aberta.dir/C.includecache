@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/basis/Documentos/Tabela Hash/hash-aberta/HashAberta.c
-headers/HashAberta.h
-/home/basis/Documentos/Tabela Hash/hash-aberta/headers/HashAberta.h
+/home/basis/Documentos/Tabela Hash/hash-aberta/Aluno.c
+headers/Aluno.h
+/home/basis/Documentos/Tabela Hash/hash-aberta/headers/Aluno.h
 
 /home/basis/Documentos/Tabela Hash/hash-aberta/headers/Aluno.h
 stdio.h
@@ -17,16 +17,4 @@ stdlib.h
 -
 string.h
 -
-
-/home/basis/Documentos/Tabela Hash/hash-aberta/headers/HashAberta.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-math.h
--
-Aluno.h
-/home/basis/Documentos/Tabela Hash/hash-aberta/headers/Aluno.h
 

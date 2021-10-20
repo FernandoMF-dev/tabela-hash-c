@@ -71,5 +71,9 @@ int compareAluno(Aluno *aluno1, Aluno *aluno2) {
  * Imprime os valores de um Aluno
  * */
 void printAluno(Aluno *aluno) {
+    if (aluno == NULL) {
+        printf("NULL");
+        return;
+    }
     printf("{ 'Matricula': '%s', 'Nome': '%s', 'Nota': %.2f }", aluno->matricula, aluno->nome, aluno->nota);
 }

@@ -134,6 +134,30 @@ Aluno *searchHash(HashAberta *hash, char *key) {
     return NULL;
 }
 
+void findAndPrintHash(HashAberta *hash, char *key) {
+    int index = hashFunction(hash, key);
+    Node *node = hash->elements[index];
+    int counter = 0;
+    int found = 0;
+
+    while (node->status != STATUS_VAZIO) {
+        if (compareNodeByKey(node, key)) {
+            found = 1;
+            break;
+        }
+        counter++;
+        node = node->next;
+    }
+
+    if (found) {
+        printf("\nO registro foi encontrado no índice %d", node->index);
+        printAluno(node->value);
+    } else {
+        printf(ERROR_REGISTRO_NAO_ENCONTRADO);
+    }
+    printf("\nForam comparados %d registros antes de encontrar esse resultado", counter);
+}
+
 void removeHash(HashAberta *hash, char *key) {
     int index = hashFunction(hash, key);
     Node *node = hash->elements[index];
@@ -175,14 +199,14 @@ void cloneHash(HashAberta *target, HashAberta *source) {
 }
 
 void printHash(HashAberta *hash) {
-    int contador = 0;
+    int counter = 0;
 
     printf("[ ");
     for (int i = 0; i < hash->length; ++i) {
         if (hash->elements[i]->status == STATUS_OCUPADO) {
             printAluno(hash->elements[i]->value);
-            contador++;
-            if (contador < hash->size) {
+            counter++;
+            if (counter < hash->size) {
                 printf(", ");
             }
         }

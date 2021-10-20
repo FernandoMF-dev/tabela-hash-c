@@ -23,6 +23,8 @@ Node **createNodeSequence(int length);
 
 HashAberta *expandsHash(HashAberta *base);
 
+int regulateBlockIndex(HashAberta *base, int block);
+
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
 
 int hashFunction(HashAberta *hash, char *key) {
@@ -72,6 +74,17 @@ HashAberta *expandsHash(HashAberta *base) {
     free(base->elements);
     free(base);
     return hash;
+}
+
+int regulateBlockIndex(HashAberta *base, int block) {
+    while (block > base->length - 1) {
+        block -= base->length;
+    }
+    while (block < 0) {
+        block += base->length;
+    }
+
+    return block;
 }
 
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
@@ -173,6 +186,29 @@ void printHash(HashAberta *hash) {
                 printf(", ");
             }
         }
+    }
+    printf(" ]");
+}
+
+void printBlock(HashAberta *hash, int block) {
+    block = regulateBlockIndex(hash, block);
+    Node *node = hash->elements[block];
+    int alreadyPrinted = 0;
+
+    printf("[ ");
+    while (node->status != STATUS_VAZIO) {
+        if (alreadyPrinted) {
+            printf(", ");
+        }
+
+        if (node->status == STATUS_OCUPADO) {
+            printAluno(node->value);
+        } else {
+            printf("{}");
+        }
+
+        alreadyPrinted = 1;
+        node = node->next;
     }
     printf(" ]");
 }

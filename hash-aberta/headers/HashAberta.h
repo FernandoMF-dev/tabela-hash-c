@@ -41,12 +41,12 @@ void printHash(HashAberta *hash);
 
 void printBlock(HashAberta *hash, int block);
 
-double averageNodesPerBlockHash(HashAberta *hash);
+//double averageNodesPerBlockHash(HashAberta *hash);
 
-int shortestBlockHash(HashAberta *hash);
+//int shortestBlockHash(HashAberta *hash);
 
-int longestBlockHash(HashAberta *hash);
+//int longestBlockHash(HashAberta *hash);
 
-void printStatisticHash(HashAberta *hash);
+//void printStatisticHash(HashAberta *hash);
 
 #endif //HASH_ABERTA_HASHABERTA_H

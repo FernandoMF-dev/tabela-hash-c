@@ -160,3 +160,19 @@ void cloneHash(HashAberta *target, HashAberta *source) {
         node = node->next;
     } while (node->index != 0);
 }
+
+void printHash(HashAberta *hash) {
+    int contador = 0;
+
+    printf("[ ");
+    for (int i = 0; i < hash->length; ++i) {
+        if (hash->elements[i]->status == STATUS_OCUPADO) {
+            printAluno(hash->elements[i]->value);
+            contador++;
+            if (contador < hash->size) {
+                printf(", ");
+            }
+        }
+    }
+    printf(" ]");
+}

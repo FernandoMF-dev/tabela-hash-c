@@ -39,8 +39,6 @@ void cloneHash(HashAberta *target, HashAberta *source);
 
 void printHash(HashAberta *hash);
 
-int sizeHash(HashAberta *hash);
-
 void printBlock(HashAberta *hash, int block);
 
 double averageNodesPerBlockHash(HashAberta *hash);

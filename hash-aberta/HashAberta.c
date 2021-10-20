@@ -124,7 +124,7 @@ Node *getNode(HashAberta *hash, int index) {
 
 // =-=-=-=-= METODOS PUBLICOS =-=-=-=-=
 
-HashAberta *newHashAberta(char *label, int length, float chargeFactor) {
+HashAberta *newHashAberta(char *label, int length, double chargeFactor) {
     if (length <= 1) {
         printf(ERROR_INVALID_LENGTH);
         return NULL;
@@ -151,7 +151,7 @@ HashAberta *newHashAberta(char *label, int length, float chargeFactor) {
 }
 
 HashAberta *insertHash(HashAberta *hash, Aluno *value) {
-    if ((float) hash->size / (float) hash->length > hash->chargeFactor) {
+    if ((double) hash->size / (double) hash->length > hash->chargeFactor) {
         hash = expandsHash(hash);
     }
 

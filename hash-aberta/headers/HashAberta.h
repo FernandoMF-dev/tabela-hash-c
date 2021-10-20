@@ -19,11 +19,11 @@ typedef struct HashAberta {
     char *label;
     int length;
     int size;
-    float chargeFactor;
+    double chargeFactor;
     Node **elements;
 } HashAberta;
 
-HashAberta *newHashAberta(char *label, int length, float chargeFactor);
+HashAberta *newHashAberta(char *label, int length, double chargeFactor);
 
 HashAberta *insertHash(HashAberta *hash, Aluno *value);
 

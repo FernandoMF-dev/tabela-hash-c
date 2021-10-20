@@ -3,7 +3,7 @@
 #include "headers/HashAberta.h"
 
 #define HASH_LENGTH 10
-#define HASH_CHARGE_FACTOR (float) 0.7
+#define HASH_CHARGE_FACTOR 0.7
 
 int menu() {
     int select = 0;

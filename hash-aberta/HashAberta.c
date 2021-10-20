@@ -230,7 +230,7 @@ void printBlock(HashAberta *hash, int block) {
     Node *node = hash->elements[block];
     int alreadyPrinted = 0;
 
-    printf("[ ");
+    printf("(%d)[ ", getBlockLength(hash, block));
     while (node->status != STATUS_VAZIO) {
         if (alreadyPrinted) {
             printf(", ");
@@ -246,4 +246,17 @@ void printBlock(HashAberta *hash, int block) {
         node = node->next;
     }
     printf(" ]");
+}
+
+int getBlockLength(HashAberta *hash, int block) {
+    block = regulateBlockIndex(hash, block);
+    Node *node = hash->elements[block];
+    int length = 0;
+
+    while (node->status != STATUS_VAZIO) {
+        length++;
+        node = node->next;
+    }
+
+    return length;
 }

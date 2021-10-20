@@ -15,6 +15,8 @@
 
 int hashFunction(HashAberta *hash, char *key);
 
+int compareNodeByKey(Node *node, char *key);
+
 Node *newNode(int index);
 
 Node **createNodeSequence(int length);
@@ -22,6 +24,15 @@ Node **createNodeSequence(int length);
 HashAberta *expandsHash(HashAberta *base);
 
 // =-=-=-=-= METODOS PRIVADOS | IMPLEMENTAÇÃO =-=-=-=-=
+
+int hashFunction(HashAberta *hash, char *key) {
+    int keyIntValue = (int) strtol(key, (char **) NULL, 10);
+    return keyIntValue % hash->length;
+}
+
+int compareNodeByKey(Node *node, char *key) {
+    return node->status == STATUS_OCUPADO && compareAlunoByKey(node->value, key) == 0;
+}
 
 Node *newNode(int index) {
     Node *node = (Node *) malloc(sizeof(Node));
@@ -51,11 +62,6 @@ Node **createNodeSequence(int length) {
     aux->next = sequence[0];
 
     return sequence;
-}
-
-int hashFunction(HashAberta *hash, char *key) {
-    int keyIntValue = (int) strtol(key, (char **) NULL, 10);
-    return keyIntValue % hash->length;
 }
 
 HashAberta *expandsHash(HashAberta *base) {
@@ -112,11 +118,27 @@ Aluno *searchHash(HashAberta *hash, char *key) {
     Node *node = hash->elements[index];
 
     while (node->status != STATUS_VAZIO) {
-        if (compareAlunoByKey(node->value, key) == 0) {
+        if (compareNodeByKey(node, key)) {
             return node->value;
         }
         node = node->next;
     }
     printf(ERROR_REGISTRO_NAO_ENCONTRADO);
     return NULL;
+}
+
+void removeHash(HashAberta *hash, char *key) {
+    int index = hashFunction(hash, key);
+    Node *node = hash->elements[index];
+
+    while (node->status != STATUS_VAZIO) {
+        if (compareNodeByKey(node, key)) {
+            node->status = STATUS_APAGADO;
+            free(node->value);
+            hash->size--;
+            return;
+        }
+        node = node->next;
+    }
+    printf(ERROR_REGISTRO_NAO_ENCONTRADO);
 }

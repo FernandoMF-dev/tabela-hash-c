@@ -3,6 +3,7 @@
 #include "headers/HashAberta.h"
 #include "headers/ControleArquivoAluno.h"
 
+#define ERROR_FALHA_ALOCACAO "\n\tERRO: Erro durante alocação de memória!\n"
 #define HASH_LENGTH 100000
 #define HASH_CHARGE_FACTOR 0.9
 
@@ -24,13 +25,12 @@ int menu() {
 }
 
 int main() {
-    HashAberta *hashAberta = newHashAberta("Hash Aberta", HASH_LENGTH, HASH_CHARGE_FACTOR);
+    HashAberta *hashAberta = newHashAberta("hash", HASH_LENGTH, HASH_CHARGE_FACTOR);
     int continuar = 1;
-    int index = 0;
     char *key = (char *) malloc(101 * sizeof(char));
 
     if (hashAberta == NULL || key == NULL) {
-        printf("\n\tERRO DE ALOCAÇÃO");
+        printf(ERROR_FALHA_ALOCACAO);
         return 0;
     }
 

@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/basis/Documentos/Tabela Hash/hash-aberta/ControleArquivoAluno.c
+headers/ControleArquivoAluno.h
+/home/basis/Documentos/Tabela Hash/hash-aberta/headers/ControleArquivoAluno.h
+
 /home/basis/Documentos/Tabela Hash/hash-aberta/HashAberta.c
 headers/HashAberta.h
 /home/basis/Documentos/Tabela Hash/hash-aberta/headers/HashAberta.h
@@ -18,6 +22,18 @@ stdlib.h
 string.h
 -
 
+/home/basis/Documentos/Tabela Hash/hash-aberta/headers/ControleArquivoAluno.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+Aluno.h
+/home/basis/Documentos/Tabela Hash/hash-aberta/headers/Aluno.h
+HashAberta.h
+/home/basis/Documentos/Tabela Hash/hash-aberta/headers/HashAberta.h
+
 /home/basis/Documentos/Tabela Hash/hash-aberta/headers/HashAberta.h
 stdio.h
 -
@@ -29,4 +45,10 @@ math.h
 -
 Aluno.h
 /home/basis/Documentos/Tabela Hash/hash-aberta/headers/Aluno.h
+
+/home/basis/Documentos/Tabela Hash/hash-aberta/main.c
+stdio.h
+-
+headers/HashAberta.h
+/home/basis/Documentos/Tabela Hash/hash-aberta/headers/HashAberta.h
 

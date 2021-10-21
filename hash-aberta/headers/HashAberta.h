@@ -43,6 +43,8 @@ void printBlock(HashAberta *hash, int block);
 
 int getBlockLength(HashAberta *hash, int block);
 
+int getNumberOfBlocks(HashAberta *hash);
+
 double averageNodesPerBlockHash(HashAberta *hash);
 
 int shortestBlockHash(HashAberta *hash);

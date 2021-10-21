@@ -306,6 +306,23 @@ int getBlockLength(HashAberta *hash, int block) {
     return length;
 }
 
+int getNumberOfBlocks(HashAberta *hash) {
+    int initialIndex = findInitialBlockIndex(hash);
+    int index = initialIndex;
+    int blocks = 0;
+    int length;
+
+    while (index < hash->length + initialIndex) {
+        length = getBlockLength(hash, index);
+        if (length > 0) {
+            blocks++;
+        }
+        index += length + 1;
+    }
+
+    return blocks;
+}
+
 double averageNodesPerBlockHash(HashAberta *hash) {
     int initialIndex = findInitialBlockIndex(hash);
     int index = initialIndex;

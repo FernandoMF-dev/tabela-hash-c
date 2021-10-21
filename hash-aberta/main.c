@@ -2,7 +2,7 @@
 
 #include "headers/HashAberta.h"
 
-#define HASH_LENGTH 10
+#define HASH_LENGTH 5
 #define HASH_CHARGE_FACTOR 0.7
 
 int menu() {
@@ -16,8 +16,9 @@ int menu() {
     printf("\n5- Limpar");
     printf("\n6- Imprimir");
     printf("\n7- Imprimir Bloco");
-    printf("\n8- Imprimir Bloco Mais Curto");
-    printf("\n9- Imprimir Bloco Mais Longo");
+    printf("\n8- Média de nós por Bloco");
+    printf("\n9- Imprimir Bloco Mais Curto");
+    printf("\n10- Imprimir Bloco Mais Longo");
     printf("\n0- Sair");
 
     printf("\nESCOLHA: ");
@@ -70,11 +71,14 @@ int main() {
                 printBlock(hashAberta, index);
                 break;
             case 8:
+                printf("\nSaída: %.2lf", averageNodesPerBlockHash(hashAberta));
+                break;
+            case 9:
                 index = shortestBlockHash(hashAberta);
                 printf("\nSaída: %d", index);
                 printBlock(hashAberta, index);
                 break;
-            case 9:
+            case 10:
                 index = longestBlockHash(hashAberta);
                 printf("\nSaída: %d", index);
                 printBlock(hashAberta, index);

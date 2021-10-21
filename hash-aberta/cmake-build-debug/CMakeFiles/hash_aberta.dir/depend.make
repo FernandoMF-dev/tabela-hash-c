@@ -15,5 +15,6 @@ CMakeFiles/hash_aberta.dir/HashAberta.c.o: \
  ../headers/HashAberta.h
 CMakeFiles/hash_aberta.dir/main.c.o: \
  ../headers/Aluno.h \
+ ../headers/ControleArquivoAluno.h \
  ../headers/HashAberta.h \
  ../main.c

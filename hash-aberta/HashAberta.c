@@ -7,6 +7,7 @@
 #define ERROR_INVALID_LENGTH "\n\tERRO: Não e possível criar uma HASH com menos de 1 índice!\n"
 
 #define EXPANSAO_MULTIPLICADOR 2
+
 #define STATUS_APAGADO -1
 #define STATUS_VAZIO 0
 #define STATUS_OCUPADO 1

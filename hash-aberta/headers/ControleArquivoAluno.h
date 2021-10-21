@@ -8,7 +8,7 @@
 #ifndef HASH_FECHADA_CONTROLEARQUIVOALUNO_H
 #define HASH_FECHADA_CONTROLEARQUIVOALUNO_H
 
-void readHashAlunoFromFile(HashAberta *hash1, HashAberta *hash2);
+void readHashAlunoFromFile(HashAberta *hash);
 
 void writeHashOnFile(HashAberta *hash);
 

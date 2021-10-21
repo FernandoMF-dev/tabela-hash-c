@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 #include "headers/HashAberta.h"
+#include "headers/ControleArquivoAluno.h"
 
-#define HASH_LENGTH 10
+#define HASH_LENGTH 100000
 #define HASH_CHARGE_FACTOR 0.7
 
 int menu() {
@@ -11,16 +12,8 @@ int menu() {
     printf("\n\n===== MENU =====");
     printf("\n1- Inserir");
     printf("\n2- Buscar");
-    printf("\n3- Buscar e Imprimir");
-    printf("\n4- Remover");
-    printf("\n5- Limpar");
-    printf("\n6- Imprimir");
-    printf("\n7- Imprimir Bloco");
-    printf("\n8- Número de Blocos");
-    printf("\n9- Média de nós por Bloco");
-    printf("\n10- Imprimir Bloco Mais Curto");
-    printf("\n11- Imprimir Bloco Mais Longo");
-    printf("\n12- Estatísticas");
+    printf("\n3- Remover");
+    printf("\n4- Estatísticas");
     printf("\n0- Sair");
 
     printf("\nESCOLHA: ");
@@ -41,6 +34,8 @@ int main() {
         return 0;
     }
 
+    readHashAlunoFromFile(hashAberta);
+
     while (continuar) {
         switch (menu()) {
             case 1:
@@ -49,49 +44,18 @@ int main() {
             case 2:
                 printf("\nEntrada: ");
                 scanf(" %s", key);
-                printAluno(searchHash(hashAberta, key));
+                findAndPrintHash(hashAberta, key);
                 break;
             case 3:
                 printf("\nEntrada: ");
                 scanf(" %s", key);
-                findAndPrintHash(hashAberta, key);
-                break;
-            case 4:
-                printf("\nEntrada: ");
-                scanf(" %s", key);
                 removeHash(hashAberta, key);
                 break;
-            case 5:
-                clearHash(hashAberta);
-                break;
-            case 6:
-                printHash(hashAberta);
-                break;
-            case 7:
-                printf("\nEntrada: ");
-                scanf(" %d", &index);
-                printBlockHash(hashAberta, index);
-                break;
-            case 8:
-                printf("\nSaída: %d", numberOfBlocksHash(hashAberta));
-                break;
-            case 9:
-                printf("\nSaída: %.2lf", averageBlockLengthHash(hashAberta));
-                break;
-            case 10:
-                index = shortestBlockHash(hashAberta);
-                printf("\nSaída: %d", index);
-                printBlockHash(hashAberta, index);
-                break;
-            case 11:
-                index = longestBlockHash(hashAberta);
-                printf("\nSaída: %d", index);
-                printBlockHash(hashAberta, index);
-                break;
-            case 12:
+            case 4:
                 printStatisticsHash(hashAberta);
                 break;
             case 0:
+                writeHashOnFile(hashAberta);
                 free(hashAberta);
                 continuar = 0;
                 break;

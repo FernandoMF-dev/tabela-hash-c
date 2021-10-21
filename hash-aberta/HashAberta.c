@@ -268,12 +268,12 @@ void printHash(HashAberta *hash) {
     printf(" ]");
 }
 
-void printBlock(HashAberta *hash, int block) {
+void printBlockHash(HashAberta *hash, int block) {
     Node *node = getNode(hash, block);
     int alreadyPrinted = 0;
     int counter = 0;
 
-    printf("(%d)[ ", getBlockLength(hash, block));
+    printf("(%d)[ ", blockLengthHash(hash, block));
     while (verifyContinueSearch(node, counter, hash->length)) {
         if (alreadyPrinted) {
             printf(", ");
@@ -292,7 +292,7 @@ void printBlock(HashAberta *hash, int block) {
     printf(" ]");
 }
 
-int getBlockLength(HashAberta *hash, int block) {
+int blockLengthHash(HashAberta *hash, int block) {
     Node *node = getNode(hash, block);
     int length = 0;
     int counter = 0;
@@ -306,14 +306,14 @@ int getBlockLength(HashAberta *hash, int block) {
     return length;
 }
 
-int getNumberOfBlocks(HashAberta *hash) {
+int numberOfBlocksHash(HashAberta *hash) {
     int initialIndex = findInitialBlockIndex(hash);
     int index = initialIndex;
     int blocks = 0;
     int length;
 
     while (index < hash->length + initialIndex) {
-        length = getBlockLength(hash, index);
+        length = blockLengthHash(hash, index);
         if (length > 0) {
             blocks++;
         }
@@ -323,7 +323,7 @@ int getNumberOfBlocks(HashAberta *hash) {
     return blocks;
 }
 
-double averageNodesPerBlockHash(HashAberta *hash) {
+double averageBlockLengthHash(HashAberta *hash) {
     int initialIndex = findInitialBlockIndex(hash);
     int index = initialIndex;
     int blocks = 0;
@@ -331,7 +331,7 @@ double averageNodesPerBlockHash(HashAberta *hash) {
     int length;
 
     while (index < hash->length + initialIndex) {
-        length = getBlockLength(hash, index);
+        length = blockLengthHash(hash, index);
         if (length > 0) {
             averageLength += (double) length;
             blocks++;
@@ -348,13 +348,13 @@ double averageNodesPerBlockHash(HashAberta *hash) {
 int shortestBlockHash(HashAberta *hash) {
     int initialIndex = findInitialBlockIndex(hash);
     int shortestIndex = initialIndex;
-    int shortestLength = getBlockLength(hash, shortestIndex);
+    int shortestLength = blockLengthHash(hash, shortestIndex);
     int index = shortestLength + initialIndex + 1;
     int length;
 
     while (index < hash->length + initialIndex) {
-        length = getBlockLength(hash, index);
-        if (shortestLength == 0 || (length > 0 && length < shortestLength)) {
+        length = blockLengthHash(hash, index);
+        if (length > 0 && (shortestLength == 0 || length < shortestLength)) {
             shortestLength = length;
             shortestIndex = index;
         }
@@ -366,12 +366,12 @@ int shortestBlockHash(HashAberta *hash) {
 
 int longestBlockHash(HashAberta *hash) {
     int longestIndex = 0;
-    int longestLength = getBlockLength(hash, longestIndex);
+    int longestLength = blockLengthHash(hash, longestIndex);
     int index = longestLength + 1;
     int length;
 
     while (index < hash->length) {
-        length = getBlockLength(hash, index);
+        length = blockLengthHash(hash, index);
         if (length > longestLength) {
             longestLength = length;
             longestIndex = index;
@@ -380,4 +380,16 @@ int longestBlockHash(HashAberta *hash) {
     }
 
     return regulateHashIndex(hash, longestIndex);
+}
+
+void printStatisticsHash(HashAberta *hash) {
+    double averageBlockLength = averageBlockLengthHash(hash);
+    int shortestBlockIndex = shortestBlockHash(hash);
+    int longestBlockIndex = longestBlockHash(hash);
+    int blocks = numberOfBlocksHash(hash);
+
+    printf("\n-> Número total de blocos: %d", blocks);
+    printf("\n-> Média do tamanho dos blocos: %.3lf", averageBlockLength);
+    printf("\n-> Bloco mais curto: %d (%d registro(s))", shortestBlockIndex, blockLengthHash(hash, shortestBlockIndex));
+    printf("\n-> Bloco mais longo: %d (%d registro(s))", longestBlockIndex, blockLengthHash(hash, longestBlockIndex));
 }

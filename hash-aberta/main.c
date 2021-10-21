@@ -20,6 +20,7 @@ int menu() {
     printf("\n9- Média de nós por Bloco");
     printf("\n10- Imprimir Bloco Mais Curto");
     printf("\n11- Imprimir Bloco Mais Longo");
+    printf("\n12- Estatísticas");
     printf("\n0- Sair");
 
     printf("\nESCOLHA: ");
@@ -35,7 +36,7 @@ int main() {
     int index = 0;
     char *key = (char *) malloc(101 * sizeof(char));
 
-    if (hashAberta == NULL) {
+    if (hashAberta == NULL || key == NULL) {
         printf("\n\tERRO DE ALOCAÇÃO");
         return 0;
     }
@@ -69,23 +70,26 @@ int main() {
             case 7:
                 printf("\nEntrada: ");
                 scanf(" %d", &index);
-                printBlock(hashAberta, index);
+                printBlockHash(hashAberta, index);
                 break;
             case 8:
-                printf("\nSaída: %d", getNumberOfBlocks(hashAberta));
+                printf("\nSaída: %d", numberOfBlocksHash(hashAberta));
                 break;
             case 9:
-                printf("\nSaída: %.2lf", averageNodesPerBlockHash(hashAberta));
+                printf("\nSaída: %.2lf", averageBlockLengthHash(hashAberta));
                 break;
             case 10:
                 index = shortestBlockHash(hashAberta);
                 printf("\nSaída: %d", index);
-                printBlock(hashAberta, index);
+                printBlockHash(hashAberta, index);
                 break;
             case 11:
                 index = longestBlockHash(hashAberta);
                 printf("\nSaída: %d", index);
-                printBlock(hashAberta, index);
+                printBlockHash(hashAberta, index);
+                break;
+            case 12:
+                printStatisticsHash(hashAberta);
                 break;
             case 0:
                 free(hashAberta);

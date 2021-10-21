@@ -39,18 +39,18 @@ void cloneHash(HashAberta *target, HashAberta *source);
 
 void printHash(HashAberta *hash);
 
-void printBlock(HashAberta *hash, int block);
+void printBlockHash(HashAberta *hash, int block);
 
-int getBlockLength(HashAberta *hash, int block);
+int blockLengthHash(HashAberta *hash, int block);
 
-int getNumberOfBlocks(HashAberta *hash);
+int numberOfBlocksHash(HashAberta *hash);
 
-double averageNodesPerBlockHash(HashAberta *hash);
+double averageBlockLengthHash(HashAberta *hash);
 
 int shortestBlockHash(HashAberta *hash);
 
 int longestBlockHash(HashAberta *hash);
 
-//void printStatisticHash(HashAberta *hash);
+void printStatisticsHash(HashAberta *hash);
 
 #endif //HASH_ABERTA_HASHABERTA_H

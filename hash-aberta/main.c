@@ -4,7 +4,7 @@
 #include "headers/ControleArquivoAluno.h"
 
 #define HASH_LENGTH 100000
-#define HASH_CHARGE_FACTOR 0.7
+#define HASH_CHARGE_FACTOR 0.9
 
 int menu() {
     int select = 0;

@@ -390,6 +390,7 @@ void printStatisticsHash(HashAberta *hash) {
     int blocks = numberOfBlocksHash(hash);
 
     printf("\n-> Número total de blocos: %d", blocks);
+    printf("\n-> Número total de registros na hash: %d", hash->size);
     printf("\n-> Média do tamanho dos blocos: %.3lf", averageBlockLength);
     printf("\n-> Bloco mais curto: %d (%d registro(s))", shortestBlockIndex, blockLengthHash(hash, shortestBlockIndex));
     printf("\n-> Bloco mais longo: %d (%d registro(s))", longestBlockIndex, blockLengthHash(hash, longestBlockIndex));

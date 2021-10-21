@@ -8,7 +8,7 @@
 #define MENSSAGE_LENDO_ARQUIVO "\n\tAVISO: Lendo arquivo, por favor aguarde...\n"
 #define MENSSAGE_SALVANDO_ARQUIVO "\n\tAVISO: Salvando arquivo, por favor aguarde...\n"
 
-#define DIRETORIO_ARQUIVO_ENTRADA "../entrada/entrada.txt"
+#define DIRETORIO_ARQUIVO_ENTRADA "../entrada/aleatorio300000.txt"
 #define DIRETORIO_ARQUIVO_SAIDA "../saida/"
 
 #define LINE_MAX_LENGTH 255

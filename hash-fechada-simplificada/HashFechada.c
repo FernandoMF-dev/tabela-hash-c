@@ -233,7 +233,7 @@ double standardDeviationHash(HashFechada *hash) {
         standardDeviation += pow((double) (hash->elements[i]->size - average), 2);
     }
 
-    return pow(standardDeviation / sizeHash(hash), 0.5);
+    return pow(standardDeviation / hash->length, 0.5);
 }
 
 /*

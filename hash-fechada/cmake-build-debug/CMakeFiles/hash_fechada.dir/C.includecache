@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/basis/Documentos/Tabela Hash/hash-fechada/HashFechada.c
-headers/HashFechada.h
-/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/ControleArquivoAluno.c
+headers/ControleArquivoAluno.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/ControleArquivoAluno.h
 
 /home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
 stdio.h
@@ -17,6 +17,18 @@ stdlib.h
 -
 string.h
 -
+
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/ControleArquivoAluno.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+Aluno.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/Aluno.h
+HashFechada.h
+/home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
 
 /home/basis/Documentos/Tabela Hash/hash-fechada/headers/HashFechada.h
 stdio.h

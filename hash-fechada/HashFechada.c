@@ -147,20 +147,17 @@ void clearHash(HashFechada *hash) {
 }
 
 /*
- * Copia os registros da Hash 'source' para a Hash 'target'
+ * Lê todos os registros da Hash 'source' e os insere na Hash 'target'.
  * */
 void cloneHash(HashFechada *target, HashFechada *source) {
     clearHash(target);
-    free(target->elements);
-    target->length = source->length;
-    target->elements = initializeElements(target->length);
     for (int i = 0; i < target->length; i++) {
         cloneList(target->elements[i], source->elements[i]);
     }
 }
 
 /*
- * Imprimi uma struct Hash
+ * Imprime uma Hash
  * */
 void printHash(HashFechada *hash) {
     if (strlen(hash->label)) {

@@ -9,7 +9,7 @@
 #define MENSSAGE_SALVANDO_ARQUIVO "\n\tAVISO: Salvando arquivo, por favor aguarde...\n"
 
 #define DIRETORIO_ARQUIVO_ENTRADA "./entrada/aleatorio300000.txt"
-#define DIRETORIO_ARQUIVO_SAIDA "../saida/"
+#define DIRETORIO_ARQUIVO_SAIDA "./saida/"
 
 #define LINE_MAX_LENGTH 255
 #define FILE_NAME_MAX_LENGTH 31

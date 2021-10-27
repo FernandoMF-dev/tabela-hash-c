@@ -34,7 +34,7 @@ int main() {
         return 0;
     }
 
-    readHashAlunoFromFile(hashAberta);
+    hashAberta = readHashAlunoFromFile(hashAberta);
 
     while (continuar) {
         switch (menu()) {

@@ -103,7 +103,8 @@ Node **createNodeSequence(int length) {
  * Expande a quantidade de elementos que cabem numa Hash
  * */
 HashAberta *expandsHash(HashAberta *source) {
-    HashAberta *target = newHashAberta(source->label, source->length * EXPANSAO_MULTIPLICADOR, source->chargeFactor);
+    HashAberta *target = newHashAberta(source->label, (int) (source->length * EXPANSAO_MULTIPLICADOR),
+                                       source->chargeFactor);
 
     cloneHash(target, source);
 
@@ -288,7 +289,7 @@ void clearHash(HashAberta *hash) {
 
     do {
         if (node->status != STATUS_VAZIO) {
-            if(node->status == STATUS_OCUPADO) {
+            if (node->status == STATUS_OCUPADO) {
                 free(node->value);
             }
             node->status = STATUS_VAZIO;

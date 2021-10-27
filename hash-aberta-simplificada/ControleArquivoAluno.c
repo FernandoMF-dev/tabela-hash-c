@@ -68,7 +68,7 @@ void writeAlunosOnFile(FILE *fp, HashAberta *hash) {
 /*
  * Lê o arquivo na URL específicada e preenche as hash de acordo com seu o conteúdo
  * */
-void readHashAlunoFromFile(HashAberta *hash) {
+HashAberta *readHashAlunoFromFile(HashAberta *hash) {
     FILE *fp = fopen(DIRETORIO_ARQUIVO_ENTRADA, "r");
     int contador = 0;
     int registros;
@@ -77,7 +77,7 @@ void readHashAlunoFromFile(HashAberta *hash) {
 
     if (!fp) {
         printf(ERRO_ABRIR_ARQUIVO);
-        return;
+        return hash;
     }
 
     fscanf(fp, " %d", &registros);
@@ -88,6 +88,7 @@ void readHashAlunoFromFile(HashAberta *hash) {
     }
 
     fclose(fp);
+    return hash;
 }
 
 /*

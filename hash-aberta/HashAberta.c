@@ -367,12 +367,10 @@ void printBlockHash(HashAberta *hash, int block) {
 int blockLengthHash(HashAberta *hash, int block) {
     Node *node = getNode(hash, block);
     int length = 0;
-    int counter = 0;
 
-    while (verifyContinueSearch(node, counter, hash->length)) {
+    while (verifyContinueSearch(node, length, hash->length)) {
         node = node->next;
         length++;
-        counter++;
     }
 
     return length;

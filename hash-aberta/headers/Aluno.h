@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifndef HASH_FECHADA_ALUNO_H
-#define HASH_FECHADA_ALUNO_H
+#ifndef HASH_ABERTA_ALUNO_H
+#define HASH_ABERTA_ALUNO_H
 
 typedef struct Aluno {
     char *matricula;
@@ -21,4 +21,4 @@ int compareAluno(Aluno *aluno1, Aluno *aluno2);
 
 void printAluno(Aluno *aluno);
 
-#endif //HASH_FECHADA_ALUNO_H
+#endif //HASH_ABERTA_ALUNO_H

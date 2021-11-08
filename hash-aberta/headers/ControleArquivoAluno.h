@@ -5,11 +5,11 @@
 #include "Aluno.h"
 #include "HashAberta.h"
 
-#ifndef HASH_FECHADA_CONTROLEARQUIVOALUNO_H
-#define HASH_FECHADA_CONTROLEARQUIVOALUNO_H
+#ifndef HASH_ABERTA_CONTROLEARQUIVOALUNO_H
+#define HASH_ABERTA_CONTROLEARQUIVOALUNO_H
 
 HashAberta *readHashAlunoFromFile(HashAberta *hash);
 
 void writeHashOnFile(HashAberta *hash);
 
-#endif //HASH_FECHADA_CONTROLEARQUIVOALUNO_H
+#endif //HASH_ABERTA_CONTROLEARQUIVOALUNO_H
